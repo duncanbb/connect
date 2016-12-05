@@ -23,7 +23,7 @@ column name  | data type | details
 -------------|-----------|-----------------------
 id           | integer   | not null, primary key
 commentor_id | integer   | not null, foreign key (references users), indexed
-post_id      | string    | not null, foreign key (references story), indexed
+story_id     | string    | not null, foreign key (references story), indexed
 body         | text      | not null
 
 ## tags
