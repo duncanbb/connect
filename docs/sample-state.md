@@ -41,27 +41,6 @@
       }
     }
   }
-  story_tags: {
-    1: {
-        story_id: 1,
-        tag_id: 1,
-      }
-    2: {
-        story_id: 1,
-        tag_id: 2,
-      }  
-  }
-
-  tag_follows: {
-    1: {
-      user_id: 1,
-      tag_id: 1,
-    }
-    2: {
-      user_id: 1,
-      tag_id: 2,
-    }
-  }
 
   story_likes: {
     1: {
