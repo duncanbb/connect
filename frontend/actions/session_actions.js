@@ -9,6 +9,8 @@ export function loginUser(user) {
     return SessionAPIUtil.login(user).then(user => {
       dispatch(receiveCurrentUser(user));
       return user;
+    }, errors => {
+        dispatch(receiveErrors(errors));
     });
   };
 }
@@ -17,7 +19,7 @@ export function signUp(user) {
   return (dispatch) => {
     return SessionAPIUtil.signup(user).then(user=>
     dispatch(receiveCurrentUser(user)),
-      err => dispatch(receiveErrors(err.responseJSON)));
+      errors => dispatch(receiveErrors(errors)));
   };
 }
 

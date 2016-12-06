@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+/*
+ /* --- RESET --- */
+
+
+
+ ul {
+  list-style: none;
+}

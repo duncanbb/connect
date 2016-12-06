@@ -44,15 +44,26 @@ class SessionForm extends React.Component {
     });
   }
 
+  errors(){
+    const { errors } = this.props;
+    if (errors.length === 0){
+      return;
+    } else {
+      return(
+        <li className="signin-login-errors">
+          { errors.map((error, idx) => <ul key={idx}> {error} </ul>) }
+        </li>
+      );
+    }
+  }
+
   render(){
     const { errors, formType, processForm } = this.props;
     const { username, password } = this.state;
 
-
     return <form onSubmit={this.handleSubmit} className ="session-form">
       <header>{ formType } {this.switchLink()}</header>
-
-      { errors.map((error, idx) => <p key={idx}>{error}</p>) }
+     { this.errors ()}
       <label>
         Username:
         <input type="text"
