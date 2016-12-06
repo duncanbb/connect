@@ -1,14 +1,19 @@
 {
-  "name": "benchbnb",
+  "name": "connect",
   "version": "1.0.0",
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": "6.7.0",
+    "npm": "3.10.7"
   },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/webpack"
+  }
+}
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -26,4 +31,6 @@
     "redux-thunk": "^2.1.0",
     "webpack": "^1.13.3"
   }
+
+
 }
