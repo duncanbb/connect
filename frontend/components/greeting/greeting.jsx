@@ -3,17 +3,16 @@ import { Link } from 'react-router';
 import GreetingContainer from './greeting_container';
 
 const sessionLinks = () => (
-  <nav name ="login-signup">
-    <Link to="/login">Login</Link>
-    &nbsp;or&nbsp;
-    <Link to="/signup">Signup</Link>
+  <nav name ="signin-signup">
+    <Link to="/signin">Sign in</Link>
+    <Link to="/signup">Sign up</Link>
   </nav>
 );
 
 const personalGreeting = (currentUser, logout) => (
   <div>
     <h2>Hi, { currentUser.username }</h2>
-    <button onClick={logout}>Logout</button>
+    <button onClick={logout}>Sign out</button>
   </div>
 );
 

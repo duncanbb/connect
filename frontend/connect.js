@@ -2,9 +2,9 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import React from 'react';
-import { loginUser } from './actions/session_actions';
+import { signInUser } from './actions/session_actions';
 
-window.login = loginUser;
+window.login = signInUser;
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

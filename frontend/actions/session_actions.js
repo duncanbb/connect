@@ -4,9 +4,9 @@ export const RESET_USER = 'RESET_USER';
 
 import * as SessionAPIUtil from '../util/session_api_util.js';
 
-export function loginUser(user) {
+export function signInUser(user) {
   return (dispatch) => {
-    return SessionAPIUtil.login(user).then(user => {
+    return SessionAPIUtil.signin(user).then(user => {
       dispatch(receiveCurrentUser(user));
       return user;
     }, errors => {

@@ -23,10 +23,10 @@ class SessionForm extends React.Component {
   }
 
   switchLink() {
-    if (this.props.formType === "login"){
-      return <Link to="/signup">Or signup</Link>;
+    if (this.props.formType === "signin"){
+      return <Link to="/signup" className="top-header">/ Sign Up</Link>;
     } else {
-      return <Link to="/login">Or login</Link>;
+      return <Link to="/signin" className="top-header">/ Sign In</Link>;
     }
   }
 
@@ -61,25 +61,27 @@ class SessionForm extends React.Component {
     const { errors, formType, processForm } = this.props;
     const { username, password } = this.state;
 
-    return <form onSubmit={this.handleSubmit} className ="session-form">
-      <header>{ formType } {this.switchLink()}</header>
-     { this.errors ()}
-      <label>
-        Username:
-        <input type="text"
-          value={ username }
-          onChange={this.update("username")}
-          className="login-input" />
-      </label><br/>
-      <label>
-        Password:
-        <input type="password"
-          value={ password }
-          onChange={this.update("password")} />
-      </label>
-      <br/>
-    <input type ="submit" value="Submit" />
-    </form>;
+    return (
+      <form onSubmit={this.handleSubmit} className ="session-form">
+        <header className="top-header">{ formType } {this.switchLink()}</header>
+       { this.errors ()}
+        <label>
+          Username:
+          <input type="text"
+            value={ username }
+            onChange={this.update("username")}
+            className="login-input" />
+        </label><br/>
+        <label>
+          Password:
+          <input type="password"
+            value={ password }
+            onChange={this.update("password")} />
+        </label>
+        <br/>
+      <input type ="submit" value="Submit" />
+      </form>
+    );
   }
 }
 

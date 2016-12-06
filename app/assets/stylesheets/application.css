@@ -16,9 +16,47 @@
 /*
  /* --- RESET --- */
 
+ html, body, header, nav, h1, a, ul, li,
+ strong, main, section, img, div, h2, p,
+ form, fieldset, label, input, textarea,
+ button, article, footer, small {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font: inherit;
+   box-sizing: inherit;
+   text-align: inherit;
+   text-decoration: inherit;
+   vertical-align: inherit;
+   color: inherit;
+   background: transparent;
+ }
 
-
- .signin-login-errors ul, li{
-  list-style: none;
-  color: red;
+body {
+  font-family: "Helvetica-Neue", Helvetica, Arial;
+  color: rgba(0,0,0,.44);
 }
+
+.top-header {
+  color: #1c9963;
+  float:right;
+}
+
+
+.button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.signin-login-errors ul, li{
+   list-style: none;
+   color: red;
+ }
