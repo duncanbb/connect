@@ -50,9 +50,9 @@ class SessionForm extends React.Component {
       return;
     } else {
       return(
-        <li className="signin-login-errors">
-          { errors.map((error, idx) => <ul key={idx}> {error} </ul>) }
-        </li>
+        <ul className="signin-login-errors">
+          { errors.map((error, idx) => <li key={idx}> {error} </li>) }
+        </ul>
       );
     }
   }

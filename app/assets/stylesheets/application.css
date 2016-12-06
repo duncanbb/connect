@@ -18,6 +18,7 @@
 
 
 
- ul {
+ .signin-login-errors ul, li{
   list-style: none;
+  color: red;
 }
