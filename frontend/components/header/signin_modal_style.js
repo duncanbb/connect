@@ -17,7 +17,6 @@ export const signinModalStyle = {
     color: "rgba(0,0,0,.6)",
     position: 'fixed',
     top     : '100px',
-    bottom  : '220px',
     width:    '520px',
     boxShadow: '0 2px 6px 0 rgba(0,0,0,.44)',
     zIndex: 11,

@@ -18,7 +18,7 @@
 
  html, body, header, nav, h1, a, ul, li,
  strong, main, section, img, div, h2, p,
- form, fieldset, label, input textarea,
+ form, fieldset, label, input, textarea,
  button, article, footer, small {
    margin: 0;
    padding: 0;
@@ -78,6 +78,11 @@ ul {
   display: block;
 }
 
+.session-form {
+  font-size: 14px;
+  margin: 0 auto;
+}
+
 .submitButton {
   color: #00ab6b;
   padding: 0;
@@ -85,14 +90,19 @@ ul {
   border: none;
   padding-left: 10px;
   background: transparent;
-  font-size: 14px;
-  margin: 0 auto;
+  margin: 0 0 0 30px;
+}
+
+.loginLabel {
+  margin: 38px;
+  padding-top: 20px;
 }
 
 .login-input {
   margin: 0 auto;
   border-bottom: 1px solid rgba(0,0,0,.15);
   display: block;
+  width: 85%;
 }
 /*.signin-login-errors ul, li{
    list-style: none;

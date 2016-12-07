@@ -45,17 +45,16 @@ class SignInForm extends React.Component {
     const button = this.props.formType === "Sign Up" ? "" : <button className="submitButton" onClick={ this.guestsignIn }>Guest Sign In</button>;
     return (
       <div>
-        <img src={ window.plant }/>
+        <img src={ window.plant } width="100%"/>
         <form onSubmit={this.handleSubmit} className ="session-form">
            { this.errors() }
             <label className="loginLabel">Username
               <input type="text"
-                placeholder="username"
                 value={ username }
                 onChange={this.update("username")}
                 className="login-input" />
             </label><br/>
-            <label>
+          <label className="loginLabel">Password
               <input type="password"
                 value={ password }
                 onChange={this.update("password")}
