@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import SessionContainer from './session_form_container';
-import modal from 'react-modal';
+import Modal from 'react-modal';
+import { signinModalStyle } from './signin_modal_style';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -9,7 +10,10 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
+      modalOpen: false,
     };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -64,27 +68,36 @@ class SessionForm extends React.Component {
 
   render(){
     const { errors, formType, processForm } = this.props;
-    const { username, password } = this.state;
+    const { username, password, modalOpen } = this.state;
     return (
-        <form onSubmit={this.handleSubmit} className ="session-form">
-         { this.errors() }
-          <label>
-            Username:
-            <input type="text"
-              value={ username }
-              onChange={this.update("username")}
-              className="login-input" />
-          </label><br/>
-          <label>
-            Password:
-            <input type="password"
-              value={ password }
-              onChange={this.update("password")} />
-          </label>
-          <br/>
-        <footer className="signin-footer">{ this.convertFormType() } {this.switchLink()}</footer>
-        <input type ="submit" value="Submit" />
-      </form>
+      <div>
+        <button onClick={ this.openModal }>Sign In!!</button>
+        <Modal
+          isOpen={ modalOpen }
+          onRequestClose={ this.closeModal }
+          contentLabel="whatever"
+          style={ signinModalStyle }>
+          <form onSubmit={this.handleSubmit} className ="session-form">
+             { this.errors() }
+              <label className="loginLabel">Username
+                <input type="text"
+                  placeholder="username"
+                  value={ username }
+                  onChange={this.update("username")}
+                  className="login-input" />
+              </label><br/>
+              <label>
+                <input type="password"
+                  value={ password }
+                  onChange={this.update("password")}
+                  className="login-input" />
+              </label>
+              <br/>
+            <footer className="signin-footer">{ this.convertFormType() } {this.switchLink()}</footer>
+            <input type ="submit" value="Submit" />
+          </form>
+        </Modal>
+      </div>
     );
   }
 

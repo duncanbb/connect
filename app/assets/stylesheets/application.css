@@ -18,7 +18,7 @@
 
  html, body, header, nav, h1, a, ul, li,
  strong, main, section, img, div, h2, p,
- form, fieldset, label, input, textarea,
+ form, fieldset, label, input textarea,
  button, article, footer, small {
    margin: 0;
    padding: 0;
@@ -34,8 +34,12 @@
  }
 
 body {
-  font-family: "Helvetica-Neue", Helvetica, Arial;
-  color: rgba(0,0,0,.44);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 ul {
@@ -74,6 +78,10 @@ ul {
   display: block;
 }
 
+.login-input {
+  border-bottom: 1px solid rgba(0,0,0,.15);
+  display: block;
+}
 /*.signin-login-errors ul, li{
    list-style: none;
    color: red;
