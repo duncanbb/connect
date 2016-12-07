@@ -1,5 +1,5 @@
 # Channel
-
+[View Heroku][heroku]
 [heroku]: https://connect-beta.herokuapp.com/
 [trello]: https://trello.com/b/R2fRBfdm/channel
 

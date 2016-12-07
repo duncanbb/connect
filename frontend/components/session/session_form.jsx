@@ -77,6 +77,7 @@ class SessionForm extends React.Component {
           onRequestClose={ this.closeModal }
           contentLabel="whatever"
           style={ signinModalStyle }>
+          <img src={ window.plant }/>
           <form onSubmit={this.handleSubmit} className ="session-form">
              { this.errors() }
               <label className="loginLabel">Username
@@ -94,7 +95,7 @@ class SessionForm extends React.Component {
               </label>
               <br/>
             <footer className="signin-footer">{ this.convertFormType() } {this.switchLink()}</footer>
-            <input type ="submit" value="Submit" />
+            <input className="submitButton" type ="submit" value="Submit" />
           </form>
         </Modal>
       </div>
