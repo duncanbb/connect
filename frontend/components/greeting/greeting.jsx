@@ -16,7 +16,6 @@ const sessionLinks = () => (
         <Link to="/search">Search</Link>
       </li>
     </ul>
-    <img src= { window.plant } />
   </nav>
 );
 

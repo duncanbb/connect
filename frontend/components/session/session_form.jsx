@@ -9,7 +9,6 @@ class SessionForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      modalOpen: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -58,29 +57,25 @@ class SessionForm extends React.Component {
     const { errors, formType, processForm } = this.props;
     const { username, password } = this.state;
     return (
-      <modal
-        isOpen={this.state.modalOpen}
-        onRequestClose={this.closeModal}>
-          <form onSubmit={this.handleSubmit} className ="session-form">
-           { this.errors }
-            <label>
-              Username:
-              <input type="text"
-                value={ username }
-                onChange={this.update("username")}
-                className="login-input" />
-            </label><br/>
-            <label>
-              Password:
-              <input type="password"
-                value={ password }
-                onChange={this.update("password")} />
-            </label>
-            <br/>
-          <footer className="signin-footer">{ formType } {this.switchLink()}</footer>
-          <input type ="submit" value="Submit" />
-        </form>
-    </modal>
+        <form onSubmit={this.handleSubmit} className ="session-form">
+         { this.errors() }
+          <label>
+            Username:
+            <input type="text"
+              value={ username }
+              onChange={this.update("username")}
+              className="login-input" />
+          </label><br/>
+          <label>
+            Password:
+            <input type="password"
+              value={ password }
+              onChange={this.update("password")} />
+          </label>
+          <br/>
+        <footer className="signin-footer">{ formType } {this.switchLink()}</footer>
+        <input type ="submit" value="Submit" />
+      </form>
     );
   }
 
