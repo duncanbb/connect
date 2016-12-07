@@ -56,7 +56,7 @@ the API.
 
 **objective:** Users can follow authors or posts, thereby altering the information in their feed. Users can also like posts.
 
-### Phase 6: - Pagination / infinite scroll for Posts Index (1 day, W2 F 6pm)
+### Phase 6: - Infinite scroll for Posts Index (1 day, W2 F 6pm)
 
 **objective:** Add infinite scroll to Posts Index
 

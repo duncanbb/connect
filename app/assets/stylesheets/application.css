@@ -38,25 +38,43 @@ body {
   color: rgba(0,0,0,.44);
 }
 
+ul {
+  list-style: none;
+}
+
 .top-header {
   color: #1c9963;
-  float:right;
+  float:left;
+  width: 900px;
+  margin: 0 auto;
+
 }
 
-
-.button {
-  font: bold 11px Arial;
-  text-decoration: none;
-  background-color: #EEEEEE;
-  color: #333333;
-  padding: 2px 6px 2px 6px;
-  border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+.header-links  {
+  color: #02b875;
+  float: right;
 }
 
-.signin-login-errors ul, li{
+.header-links li {
+  float: left;
+  padding: 20px 10px;
+  font-size: 14px;
+}
+
+.logo {
+  padding: 20px;
+  float: left;
+  font-weight: bold;
+  color: rgba(0,0,0,.75)
+}
+
+.group :after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+/*.signin-login-errors ul, li{
    list-style: none;
    color: red;
- }
+ }*/
