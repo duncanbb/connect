@@ -95,8 +95,9 @@ ul {
 
 .loginLabel {
   margin: 38px;
-  padding-top: 20px;
+  display: block;
 }
+
 
 .login-input {
   margin: 0 auto;
