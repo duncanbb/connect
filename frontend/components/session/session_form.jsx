@@ -25,9 +25,9 @@ class SessionForm extends React.Component {
 
   switchLink() {
     if (this.props.formType === "signin"){
-      return <Link to="/signup">/ Sign Up</Link>;
+      return <Link to="/signup">or Sign Up</Link>;
     } else {
-      return <Link to="/signin">/ Sign In</Link>;
+      return <Link to="/signin">or Sign In</Link>;
     }
   }
 
@@ -53,6 +53,15 @@ class SessionForm extends React.Component {
     this.setState({ modalOpen: false });
   }
 
+  convertFormType(){
+    if (this.props.formType === "signin"){
+      let result = "Sign Up";
+      return "Sign In";
+    } else {
+      return "Sign Up";
+    }
+  }
+
   render(){
     const { errors, formType, processForm } = this.props;
     const { username, password } = this.state;
@@ -73,7 +82,7 @@ class SessionForm extends React.Component {
               onChange={this.update("password")} />
           </label>
           <br/>
-        <footer className="signin-footer">{ formType } {this.switchLink()}</footer>
+        <footer className="signin-footer">{ this.convertFormType() } {this.switchLink()}</footer>
         <input type ="submit" value="Submit" />
       </form>
     );

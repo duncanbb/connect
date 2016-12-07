@@ -1,12 +1,12 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
+import HeaderContainer from './header/header_container';
 
 const App = ({ children }) => {
   return (
-  <header className="site-header">
-    <GreetingContainer />
+  <section className="react-root">
+    <HeaderContainer />
     { children }
-  </header>
+  </section>
   )
 };
 

@@ -5,9 +5,9 @@ const sessionReducer = ( state = { currentUser: null, errors:[]}, action ) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return merge({}, state, {currentUser: action.user});
+      return merge({}, state, {currentUser: action.user, errors: []});
     case RESET_USER:
-      return merge({}, state, {currentUser: null});
+      return merge({}, state, {currentUser: null, errors: []});
     case RECEIVE_ERRORS:
       return merge({}, state, { errors:action.errors.responseJSON });
     default:
