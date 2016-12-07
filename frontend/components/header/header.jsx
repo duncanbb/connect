@@ -81,6 +81,7 @@ class Header extends React.Component {
   render() {
     const { modalOpen } = this.state;
     const { signInForm } = this.props;
+    const formstring = this.state.signup === true ? "Sign Up" : "Sign In";
     return (
       <header>
         {this.signInOrAccountDetails()}
@@ -89,7 +90,7 @@ class Header extends React.Component {
           onRequestClose={ this.closeModal }
           contentLabel="whatever"
           style={ signinModalStyle }>
-          <SignInForm formSubmission={ this.formStyle() } errors={ this.props.errors } closeModal={ this.closeModal }/>
+          <SignInForm formSubmission={ this.formStyle() } errors={ this.props.errors } closeModal={ this.closeModal } formType = {formstring}/>
         </Modal>
     </header>
   );

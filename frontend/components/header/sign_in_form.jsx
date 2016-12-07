@@ -12,6 +12,7 @@ class SignInForm extends React.Component {
       modalOpen: false,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestsignIn = this.guestsignIn.bind(this);
   }
 
   componentDidUpdate() {
@@ -41,6 +42,7 @@ class SignInForm extends React.Component {
   render(){
     const { errors, formSubmission } = this.props;
     const { username, password } = this.state;
+    const button = this.props.formType === "Sign Up" ? "" : <button className="submitButton" onClick={ this.guestsignIn }>Guest Sign In</button>;
     return (
       <div>
         <img src={ window.plant }/>
@@ -62,9 +64,16 @@ class SignInForm extends React.Component {
             <br/>
           <footer className="signin-footer"> </footer>
           <input className="submitButton" type ="submit" value="Submit" />
+          { button }
         </form>
       </div>
     );
+  }
+
+  guestsignIn(e){
+    e.preventDefault();
+    const user = Object.assign({}, {username: "test", password:"password"});
+    this.props.formSubmission(user).then(() => this.props.closeModal());
   }
 
   errors(){
