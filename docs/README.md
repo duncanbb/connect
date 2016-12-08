@@ -42,7 +42,7 @@ sufficient CSS styling:
 
 ### Phase 2: Stories Model, API, and components (2 days)
 
-**Objective:** Posts can be created, read, edited and destroyed through
+**Objective:** Stories can be created, read, edited and destroyed through
 the API.
 
 ### Phase 3: Stories (2 days)

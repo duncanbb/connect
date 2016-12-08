@@ -17,6 +17,13 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many(
+    :stories,
+    class_name: "Story",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
   before_validation :ensure_session_token
 
   def password=(password)

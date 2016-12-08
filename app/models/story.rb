@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: stories
+#
+#  id         :integer          not null, primary key
+#  title      :string           not null
+#  body       :text             not null
+#  author_id  :integer          not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+class Story < ApplicationRecord
+  validates :author_id, uniqueness: { scope: title }
+  validates :author_id, presence: true
+  validates :body, presence: true
+  validates :title, presence: true
+
+
+  belongs_to(
+    :user,
+    class_name: "User",
+    foreign_key: :user_id,
+    primary_key: :id
+  )
+
+end
+has_many(
+  :jerseys,
+  class_name: "Jersey",
+  foreign_key: :player_id,
+  primary_key: :id
+)
