@@ -11,7 +11,7 @@
 #
 
 class Story < ApplicationRecord
-  validates :author_id, uniqueness: { scope: title }
+  validates :author_id, uniqueness: { scope: :title }
   validates :author_id, presence: true
   validates :body, presence: true
   validates :title, presence: true
@@ -20,14 +20,8 @@ class Story < ApplicationRecord
   belongs_to(
     :user,
     class_name: "User",
-    foreign_key: :user_id,
+    foreign_key: :author_id,
     primary_key: :id
   )
 
 end
-has_many(
-  :jerseys,
-  class_name: "Jersey",
-  foreign_key: :player_id,
-  primary_key: :id
-)

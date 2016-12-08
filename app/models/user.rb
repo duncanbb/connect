@@ -20,7 +20,7 @@ class User < ApplicationRecord
   has_many(
     :stories,
     class_name: "Story",
-    foreign_key: :user_id,
+    foreign_key: :author_id,
     primary_key: :id
   )
 
