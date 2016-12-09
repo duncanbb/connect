@@ -8,7 +8,8 @@ const _redirectIfLoggedIn = (nextState, replace) => {
   if (currentUser) {
     replace('/');
   }
-}
+};
+
 
 const Root = ({ store }) => (
   <Provider store={ store }>

@@ -5,10 +5,10 @@ import {
   RECEIVE_STORY_ERRORS, RECEIVE_NEW_STORY
 } from '../actions/story_actions';
 
-const StoryReducer = (state = { errors:[]}, action) => {
+const StoryReducer = (state = { stories: {}, errors:[]}, action) => {
   switch (action.type) {
     case RECEIVE_ALL_STORIES:
-      return merge({}, action.stories);
+      return  merge({}, state, { stories:action.stories });
     case RECEIVE_SINGLE_STORY:
     case RECEIVE_NEW_STORY:
       return merge({}, state, {

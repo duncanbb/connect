@@ -11,7 +11,6 @@ import * as APIUtil from '../util/story_api_util';
 
 export function fetchAllStories() {
   return (dispatch) => {
-    dispatch(requestAllStories());
     return APIUtil.fetchAllStories()
       .then(stories => dispatch(receiveAllStories(stories)));
   };
