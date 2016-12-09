@@ -13,7 +13,7 @@ export function fetchAllStories() {
   return (dispatch) => {
     dispatch(requestAllStories());
     return APIUtil.fetchAllStories()
-      .then(story => dispatch(receiveAllStories(story)));
+      .then(stories => dispatch(receiveAllStories(stories)));
   };
 }
 
