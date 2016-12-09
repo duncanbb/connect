@@ -18,7 +18,7 @@ class Story < ApplicationRecord
 
 
   belongs_to(
-    :user,
+    :author,
     class_name: "User",
     foreign_key: :author_id,
     primary_key: :id

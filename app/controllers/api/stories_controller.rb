@@ -1,7 +1,7 @@
 class Api::StoriesController < ApplicationController
 
   def create
-    @story = Story.new(user_params)
+    @story = Story.new(story_params)
     @story.author_id = current_user.id
     if @story.save
       render :show
@@ -10,9 +10,22 @@ class Api::StoriesController < ApplicationController
     end
   end
 
+  def index
+    @stories = Story.all
+  end
+
+  def show
+    @story = Story.find(params[:id])
+  end
+
+  def destroy
+    @story = Story.find(params[:id])
+    @story.destroy
+    render :show
+  end
 
   private
-  def user_params
+  def story_params
     params.require(:story).permit(:title, :body)
   end
 
