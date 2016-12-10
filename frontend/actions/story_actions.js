@@ -31,6 +31,8 @@ export function createStory(story) {
     return APIUtil.createStory(story).then(story => {
       dispatch(receiveNewStory(story));
       return story;
+    }, errors => {
+      dispatch(receiveStoryErrors(errors));
     });
   };
 }

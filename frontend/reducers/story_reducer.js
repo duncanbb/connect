@@ -12,11 +12,11 @@ const StoryReducer = (state = { stories: {}, errors:[]}, action) => {
     case RECEIVE_SINGLE_STORY:
     case RECEIVE_NEW_STORY:
       return merge({}, state, {
-        [action.story.id]: action.story
+        stories: action.story
       });
     case REMOVE_STORY:
       let newState = merge({}, oldState);
-      delete newState[action.story.id];
+      delete newState[action.stories.id];
       return newState;
     case RECEIVE_STORY_ERRORS:
       return merge({}, state, { errors:action.errors.responseJSON });

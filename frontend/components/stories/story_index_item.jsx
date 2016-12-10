@@ -9,6 +9,7 @@ class StoryIndexItem extends React.Component {
       <li className="story-index-item">
         <section className="indexItem">
           <h3 className="story-index-title">{ story.title }</h3>
+          <p className="story-index-authorinfo">by {story.author.username} </p>
           <img className="story-index-image"src={img}/>
           <p className="story-index-body-preview"> { story.body.slice(0, 100) }</p>
         </section>

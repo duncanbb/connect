@@ -9,7 +9,7 @@ class StoriesIndex extends React.Component {
   render () {
     const { stories } = this.props;
     const storyItems = stories.map(story => (
-      <StoryIndexItem key={ story.id } story={ story } />)
+      <StoryIndexItem key={ story.id } story={ story } author = { story.author }/>)
     );
 
     return (
