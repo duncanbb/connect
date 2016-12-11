@@ -42,11 +42,12 @@ class SignInForm extends React.Component {
   render(){
     const { errors, formSubmission } = this.props;
     const { username, password } = this.state;
-    const button = this.props.formType === "Sign Up" ? "" : <button className="submitButton" onClick={ this.guestsignIn }>Guest Sign In</button>;
+    const button = this.props.formType === "Sign Up" ? "" : <button className="loginLabel guestsignIn" onClick={ this.guestsignIn }>Guest Sign In</button>;
     return (
       <div>
         <form onSubmit={this.handleSubmit} className ="session-form">
            { this.errors() }
+           <h1 className="form-heading">{ this.props.formType } to Connect</h1>
             <label className="loginLabel">Username
               <input type="text"
                 value={ username }

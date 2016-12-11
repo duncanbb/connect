@@ -46,6 +46,18 @@ ul {
   list-style: none;
 }
 
+.form-heading {
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 24px 0 24px 32px;
+  overflow: hidden;
+  color: rgba(0,0,0,0.8);
+}
+
 .top-header {
   color: #1c9963;
   float:left;
@@ -84,17 +96,32 @@ ul {
 }
 
 .submitButton {
+  width: 100%;
+  height: 58px;
+  border-radius: 2px;
+  font-size: 16px;
+  text-align: left;
+  margin-left: 30px;
+  padding-left: 20px;
+  max-width: 456px;
+  border: 1px solid #00ab6b;
   color: #00ab6b;
-  padding: 0;
-  border-radius: 0;
-  border: none;
-  padding-left: 10px;
-  background: transparent;
-  margin: 0 0 0 30px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: rgba(0,0,0,.05);
+  border: 1px solid #02b875;
+  color: #00ab6b;
+}
+
+.guestsignIn {
+
 }
 
 .loginLabel {
-  margin: 38px;
+  margin-top: 40px;
+  margin-left: 40px;
   display: block;
 }
 
@@ -104,6 +131,7 @@ ul {
   border-bottom: 1px solid rgba(0,0,0,.15);
   display: block;
   width: 85%;
+  padding-top: 20px;
 }
 /*.signin-login-errors ul, li{
    list-style: none;
