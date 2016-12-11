@@ -1,5 +1,6 @@
 import React from 'react';
 import StoryIndexItem from './story_index_item';
+import WriteAStory from './write_a_story';
 
 class StoriesIndex extends React.Component {
   componentDidMount() {
@@ -13,9 +14,10 @@ class StoriesIndex extends React.Component {
     );
 
     return (
-      <div>
-        <section className="storiesIndex">
+      <div className="home-stream-container">
+        <section className="stories-index">
           <ul>
+            <WriteAStory/>
             { storyItems }
           </ul>
         </section>

@@ -63,10 +63,12 @@ class Header extends React.Component {
         </ul>;
       }
       return (
-        <nav name ="top-header group">
-          <Link to="/" className="logo">Connect</Link>
-          { wrapper }
-        </nav>
+        <div className="metabar">
+          <nav name ="top-header group">
+            <Link to="/" className="logo">Connect</Link>
+            { wrapper }
+          </nav>
+        </div>
       );
   }
 

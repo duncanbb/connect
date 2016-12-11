@@ -11,7 +11,7 @@ const mapStateToProps = ({ session }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout()),
+    logout: () => dispatch(logout()).then(() => (window.currentUser = null)),
     signInUser: (user) => dispatch(signInUser(user)),
     signup: (user) => dispatch(signUp(user)),
 });

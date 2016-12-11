@@ -46,6 +46,60 @@ ul {
   list-style: none;
 }
 
+.story-index-title {
+  font-size: 29px;
+  margin-left: -1.81px;
+  line-height: 1.04;
+  letter-spacing: -.028em
+}
+
+.story-index-body-preview {
+  color: rgba(0,0,0,.44);
+  font-size: 23px;
+  margin-left: -1.44px;
+  line-height: 1.22;
+  letter-spacing: -.022em
+}
+
+.story-index-author-info {
+  color: #00ab6b;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 1.4;
+  padding-left: 10px;
+  text-rendering: auto;
+
+}
+
+.stories-index {
+   max-width: 660px;
+}
+
+.story-index-image {
+  display: block;
+  width: 85%;
+  margin: auto;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.home-stream-container {
+  background: #fafafa;
+  max-width: 1000px;
+  padding-top: 35px;
+}
+
+
+.index-item {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+  margin-bottom: 10px;
+  padding: 10px 20px 15px 20px;
+}
+
 .form-heading {
   display: block;
   width: 100%;
@@ -58,10 +112,31 @@ ul {
   color: rgba(0,0,0,0.8);
 }
 
+button:hover{
+  cursor: pointer;
+}
+
+.metabar {
+  position: absolute;
+  display: block;
+  z-index: 500;
+  width: 100%;
+  font-size: 14px;
+  background: #fff;
+  color: rgba(0,0,0,.44);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  box-sizing: border-box;
+  top: 0;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+
+}
+
 .top-header {
   color: #1c9963;
-  float:left;
-  width: 900px;
+  max-width: 900px;
   margin: 0 auto;
 
 }

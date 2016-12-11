@@ -38,6 +38,9 @@ class WriteAStory extends React.Component {
   render(){
     const { errors } = this.props;
     const { title, body } = this.state;
+    if (window.currentUser === undefined){
+      return ( <div></div> )
+    }
     return (
       <div>
         { errors }
@@ -61,6 +64,7 @@ class WriteAStory extends React.Component {
       </div>
     );
   }
+
 
   errors(){
     const { errors } = this.props;
