@@ -35,7 +35,6 @@ class SignInForm extends React.Component {
       } else {
         this.setState({formStyle: "Sign Up"});
       }
-      debugger
   }
 
 
@@ -56,7 +55,6 @@ class SignInForm extends React.Component {
   }
 
   render(){
-    debugger
     const { errors, formSubmission } = this.props;
     const { username, password } = this.state;
     const button = this.state.formType === "Sign Up" ? "" : <button className="loginLabel guestsignIn" onClick={ this.guestsignIn }>Guest Sign In</button>;
@@ -94,7 +92,7 @@ class SignInForm extends React.Component {
   guestsignIn(e){
     e.preventDefault();
     const user = Object.assign({}, {username: "test", password:"password"});
-    this.props.formSubmission(user).then(() => this.props.closeModal());
+    this.props.signInSubmission(user).then(() => this.props.closeModal());
   }
 
   errors(){
