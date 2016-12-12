@@ -12,13 +12,24 @@ class StoryDetail extends React.Component {
   }
 
   render(){
-    const { story } = this.props;
+    const { story, currentUser } = this.props;
+    let button;
+    if (currentUser === undefined || story.author.id === undefined){
+      button = (<div></div>);
+    } else if
+      (story.author.id === currentUser.id)
+    {
+      button = (<button>Edit</button>);
+    } else {
+      button = (<div></div>);
+    }
     return (
       <section className="postDetail">
         <p className="author-bio">{ story.author.username }</p>
         <h1 className="postDetailTitle">{ story.title }</h1>
         <section className="postDetailBody">
           { story.body }
+          { button }
         </section>
       </section>
     );

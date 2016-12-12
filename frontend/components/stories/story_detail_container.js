@@ -5,7 +5,8 @@ import { selectStoryDetail } from './../../reducers/selectors.js';
 
 
 const mapStateToProps = state => ({
-  story: selectStoryDetail(state)
+  story: selectStoryDetail(state),
+  currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
