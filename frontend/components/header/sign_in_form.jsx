@@ -35,6 +35,7 @@ class SignInForm extends React.Component {
       } else {
         this.setState({formStyle: "Sign Up"});
       }
+      this.props.clearErrors();
   }
 
 
