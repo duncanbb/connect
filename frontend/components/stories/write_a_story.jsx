@@ -9,6 +9,7 @@ class WriteAStory extends React.Component {
       body: "",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   componentDidUpdate() {
@@ -21,12 +22,16 @@ class WriteAStory extends React.Component {
       }
   }
 
+  clearForm(){
+    this.setState({title:"", body:""});
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const { createStory } = this.props;
     const story = Object.assign({}, this.state);
-    createStory(story).then(() => this.props.router.push("/"));
+    createStory(story);
+    this.clearForm();
   }
 
   update(field) {
@@ -42,7 +47,7 @@ class WriteAStory extends React.Component {
       return ( <div></div> )
     }
     return (
-      <div>
+      <div className="write-a-story-wrapper">
         { errors }
         <form onSubmit={this.handleSubmit} className ="write-a-story-form">
             <label className="WriteStoryLabel">Title:

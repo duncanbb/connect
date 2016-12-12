@@ -63,6 +63,7 @@ button:hover{
   font-size: 16px;
   text-align: left;
   margin-left: 30px;
+  margin-top: 20px;
   padding-left: 20px;
   max-width: 456px;
   border: 1px solid #00ab6b;
@@ -81,7 +82,7 @@ button:hover{
 }
 
 .loginLabel {
-  margin-top: 30px;
+  margin-top: 35px;
   margin-left: 40px;
   display: block;
 }
@@ -94,7 +95,9 @@ button:hover{
   width: 85%;
   padding-top: 20px;
 }
-/*.signin-login-errors ul, li{
+.signin-login-errors {
    list-style: none;
    color: red;
- }*/
+   margin-left: 190px;
+
+ }

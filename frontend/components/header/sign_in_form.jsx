@@ -65,21 +65,20 @@ class SignInForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit} className ="session-form">
-           { this.errors() }
            <h1 className="form-heading">{ this.state.formStyle } to Connect</h1>
             <label className="loginLabel">Username
               <input type="text"
                 value={ username }
                 onChange={this.update("username")}
                 className="login-input" />
-            </label><br/>
+            </label>
           <label className="loginLabel">Password
               <input type="password"
                 value={ password }
                 onChange={this.update("password")}
                 className="login-input" />
             </label>
-            <br/>
+            { this.errors() }
           <footer className="signin-footer"> </footer>
           <input className="submitButton" type ="submit" value="Submit" />
           { button }

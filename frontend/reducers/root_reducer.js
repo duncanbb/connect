@@ -6,7 +6,7 @@ import storyDetailReducer from './story_detail_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
-  story: StoryReducer,
+  stories: StoryReducer,
   storyDetail: storyDetailReducer,
 });
 
