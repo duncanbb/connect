@@ -50,14 +50,16 @@ class WriteAStory extends React.Component {
       <div className="write-a-story-wrapper">
         { errors }
         <form onSubmit={this.handleSubmit} className ="write-a-story-form">
-            <label className="WriteStoryLabel">Title:
+            <label className="WriteStoryLabel">
               <input type="text"
                 value={ title }
                 onChange={this.update("title")}
+                placeholder="Title Here..."
                 className="title-input" />
             </label><br/>
-          <label className="WriteStoryLabel">Body:
+          <label className="WriteStoryLabel">
               <textarea
+                className="story-text-area"
                  value={ body }
                  placeholder="Write Here..."
                  onChange={this.update('body')}>

@@ -47,8 +47,19 @@
   background: #fafafa;
   max-width: 1000px;
   padding-top: 35px;
+  margin-left: 200px;
+  /* TODO: adjust this once there's an actual sidebar present */
+  display: inline-block;
 }
 
+.home-sidebar-container {
+  display: inline-block;
+}
+
+.home-stream-background {
+  width: 100%;
+  background: #fafafa;
+}
 
 .index-item {
   background: #fff;
