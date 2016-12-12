@@ -22,4 +22,5 @@ story2 = Story.create!(title: "Holiday Shopping begins in earnest",
 
 story3 = Story.create!(title: "Don't sucuumb to election-induced depression",
   body: "Take vitamin-d and make lists of ways that you can actively protect the environment
-    and women's rights.", author_id: user1.id)
+    and women's rights. You're finally feeling better even if you're border-line comatose,
+    you can do this. Do it again and for longer. Use other words.", author_id: user1.id)

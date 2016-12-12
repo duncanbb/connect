@@ -10,9 +10,11 @@ class SignInForm extends React.Component {
       username: "",
       password: "",
       modalOpen: false,
+      formStyle: props.formType,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.guestsignIn = this.guestsignIn.bind(this);
+    this.swap = this.swap.bind(this);
   }
 
   componentDidUpdate() {
@@ -25,12 +27,26 @@ class SignInForm extends React.Component {
       }
   }
 
+  swap(e){
+      e.preventDefault();
+      const { formStyle } = this.state;
+      if (formStyle === "Sign Up") {
+        this.setState({formStyle: "Sign In"});
+      } else {
+        this.setState({formStyle: "Sign Up"});
+      }
+      debugger
+  }
+
 
   handleSubmit(e) {
     e.preventDefault();
-    const { formSubmission } = this.props;
+    const { signInSubmission, signUpSubmission, formType } = this.props;
+    const { formStyle } = this.state;
     const user = Object.assign({}, this.state);
-    formSubmission(user).then(() => this.props.closeModal());
+    let toExecute;
+    toExecute = formStyle === "Sign Up" ? signUpSubmission : signInSubmission;
+    toExecute(user).then(() => this.props.closeModal());
   }
 
   update(field) {
@@ -40,14 +56,19 @@ class SignInForm extends React.Component {
   }
 
   render(){
+    debugger
     const { errors, formSubmission } = this.props;
     const { username, password } = this.state;
-    const button = this.props.formType === "Sign Up" ? "" : <button className="loginLabel guestsignIn" onClick={ this.guestsignIn }>Guest Sign In</button>;
+    const button = this.state.formType === "Sign Up" ? "" : <button className="loginLabel guestsignIn" onClick={ this.guestsignIn }>Guest Sign In</button>;
+    const swapButton =
+      this.state.formStyle === "Sign Up" ?
+        <button className="loginLabel guestsignIn" onClick={ this.swap }>Or Sign In</button>
+          : <button className="loginLabel guestsignIn" onClick={ this.swap }>Or Sign Up</button>;
     return (
       <div>
         <form onSubmit={this.handleSubmit} className ="session-form">
            { this.errors() }
-           <h1 className="form-heading">{ this.props.formType } to Connect</h1>
+           <h1 className="form-heading">{ this.state.formStyle } to Connect</h1>
             <label className="loginLabel">Username
               <input type="text"
                 value={ username }
@@ -64,6 +85,7 @@ class SignInForm extends React.Component {
           <footer className="signin-footer"> </footer>
           <input className="submitButton" type ="submit" value="Submit" />
           { button }
+          { swapButton }
         </form>
       </div>
     );

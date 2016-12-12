@@ -1,6 +1,8 @@
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 export const RESET_USER = 'RESET_USER';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+
 
 import * as SessionAPIUtil from '../util/session_api_util.js';
 
@@ -37,6 +39,10 @@ export const resetUser = () => ({
 export const receiveCurrentUser = (user) => ({
   type: RECEIVE_CURRENT_USER,
   user,
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS,
 });
 
 export const receiveErrors = (errors) => ({

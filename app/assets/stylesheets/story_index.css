@@ -1,0 +1,71 @@
+.story-index-title {
+  font-size: 29px;
+  margin-left: -1.81px;
+  line-height: 1.04;
+  letter-spacing: -.028em
+}
+
+.story-index-body-preview {
+  color: rgba(0,0,0,.44);
+  font-size: 18px;
+  line-height: 1.58;
+  letter-spacing: -.004em
+}
+
+.story-index-author-info {
+  color: #00ab6b;
+  text-decoration: none;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 1.4;
+  padding-left: 10px;
+  text-rendering: auto;
+
+}
+
+.read-more {
+  font-size: 12px;
+  color: rgba(0,0,0,.44);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.stories-index {
+   max-width: 660px;
+}
+
+.story-index-image {
+  display: block;
+  width: 85%;
+  margin: auto;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+.home-stream-container {
+  background: #fafafa;
+  max-width: 1000px;
+  padding-top: 35px;
+}
+
+
+.index-item {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+  margin-bottom: 10px;
+  padding: 10px 20px 15px 20px;
+}
+
+.form-heading {
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding: 24px 0 24px 32px;
+  overflow: hidden;
+  color: rgba(0,0,0,0.8);
+}

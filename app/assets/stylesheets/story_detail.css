@@ -1,0 +1,37 @@
+.postDetailTitle {
+  --x-height-multiplier: 0.363;
+  --baseline-multiplier: 0.157;
+  font-family: medium-content-sans-serif-font,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",Geneva,Arial,sans-serif;
+  letter-spacing: -.02em;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+  margin-left: -2.5px;
+  line-height: 1.04;
+  letter-spacing: -.028em;
+}
+.postDetail {
+  display: block;
+  padding-top: 105px;
+  max-width: 740px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+.postDetailBody {
+  margin-top: 38px;
+  --x-height-multiplier: 0.35;
+  --baseline-multiplier: 0.179;
+  font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+}
+
+.author-bio {
+  color: rgba(0,0,0,.8);
+  font-size: 15px;
+}

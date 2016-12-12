@@ -18,7 +18,7 @@ export function fetchAllStories() {
 
 export function fetchSingleStory(id) {
   return (dispatch) => {
-    dispatch(requestSingleStory());
+    dispatch(requestSingleStory(id));
     return APIUtil.fetchSingleStory(id)
       .then(story => { dispatch(receiveSingleStory(story));
       return story;

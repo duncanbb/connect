@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import HeaderContainer from './header_container';
 import Modal from 'react-modal';
 import { signinModalStyle } from './signin_modal_style';
@@ -19,6 +19,7 @@ class Header extends React.Component {
   }
 
   closeModal(){
+    this.props.clearErrors();
     this.setState({ modalOpen: false });
   }
 
@@ -64,7 +65,7 @@ class Header extends React.Component {
       }
       return (
         <div className="metabar">
-          <nav name ="top-header group">
+          <nav className ="top-header group">
             <Link to="/" className="logo">Connect</Link>
             { wrapper }
           </nav>
@@ -82,7 +83,7 @@ class Header extends React.Component {
 
   render() {
     const { modalOpen } = this.state;
-    const { signInForm } = this.props;
+    const { signInForm, signInUser, signup } = this.props;
     const formstring = this.state.signup === true ? "Sign Up" : "Sign In";
     return (
       <header>
@@ -92,7 +93,7 @@ class Header extends React.Component {
           onRequestClose={ this.closeModal }
           contentLabel="whatever"
           style={ signinModalStyle }>
-          <SignInForm formSubmission={ this.formStyle() } errors={ this.props.errors } closeModal={ this.closeModal } formType = {formstring}/>
+          <SignInForm signInSubmission={ signInUser }signUpSubmission={ signup }errors={ this.props.errors }closeModal={ this.closeModal }formType = {formstring}/>
         </Modal>
     </header>
   );
@@ -106,4 +107,4 @@ class Header extends React.Component {
 }
 
 
-export default Header;
+export default withRouter(Header);

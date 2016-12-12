@@ -14,13 +14,15 @@ class StoriesIndex extends React.Component {
     );
 
     return (
-      <div className="home-stream-container">
-        <section className="stories-index">
-          <ul>
-            <WriteAStory/>
-            { storyItems }
-          </ul>
-        </section>
+      <div className="home-stream-background">
+        <div className="home-stream-container">
+          <section className="stories-index">
+            <ul>
+              <WriteAStory/>
+              { storyItems }
+            </ul>
+          </section>
+        </div>
       </div>
     );
   }
