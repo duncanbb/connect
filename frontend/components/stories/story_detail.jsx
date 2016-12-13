@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import WriteCommentContainer from '../comments/write_comment_container';
 
 
 class StoryDetail extends React.Component {
@@ -33,6 +34,9 @@ class StoryDetail extends React.Component {
         <section className="postDetailBody">
           { story.body }
           <p className="linkContainer">{ link }</p>
+        </section>
+        <section className="commentsSection">
+          < WriteCommentContainer />
         </section>
       </section>
     );

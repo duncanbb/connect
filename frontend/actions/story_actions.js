@@ -48,6 +48,17 @@ export function updateStory(story) {
   };
 }
 
+export function deleteStory(story) {
+  return (dispatch) => {
+    return APIUtil.deleteStory(story).then(story => {
+      dispatch(removeStory(story));
+      return story;
+    }, errors => {
+      dispatch(receiveStoryErrors(errors));
+    });
+  };
+}
+
 export const requestAllStories = () => ({
   type: REQUEST_ALL_STORIES
 });

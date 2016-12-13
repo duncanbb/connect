@@ -24,4 +24,6 @@ class Story < ApplicationRecord
     primary_key: :id
   )
 
+  has_many :comments
+
 end

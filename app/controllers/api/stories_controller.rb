@@ -15,13 +15,13 @@ class Api::StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
+    @story = Story.includes(comments: :user).find(params[:id])
     render :show
   end
 
   def update
-    @story = current_user.stories.find_by(id:(params[:id]))
-    if @story.update_attributes(story_params)
+    @story = current_user.stories.find(params[:id])
+    if @story.update(story_params)
       render :show
     else
       render json: @story.errors.full_messages, status: 422
@@ -29,7 +29,7 @@ class Api::StoriesController < ApplicationController
   end
 
   def destroy
-    @story = Story.find(params[:id])
+    @story = current_user.stories.find(params[:id])
     @story.destroy
     render :show
   end

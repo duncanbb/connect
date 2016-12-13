@@ -31,8 +31,9 @@ export const fetchAllStories = () => {
 };
 
 export const deleteStory = (story) => {
+  const id = story.id;
   return $.ajax({
       method: 'DELETE',
-      url: '/api/stories/',
+      url: `/api/stories/${id}`,
   });
 };

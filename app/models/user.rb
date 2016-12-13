@@ -24,6 +24,8 @@ class User < ApplicationRecord
     primary_key: :id
   )
 
+  has_many :comments
+
   before_validation :ensure_session_token
 
   def password=(password)
