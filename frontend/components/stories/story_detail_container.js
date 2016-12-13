@@ -5,11 +5,11 @@ import { selectStoryDetail, selectComments } from '../../reducers/selectors.js';
 import { fetchAllComments } from '../../actions/comment_actions';
 
 
-const mapStateToProps = (state, ownProps) => ({
-  story: selectStoryDetail(state),
+const mapStateToProps = (state, ownProps) => {{
+  return ({story: selectStoryDetail(state),
   currentUser: state.session.currentUser,
-  comments: selectComments(state, ownProps.params.storyId)
-});
+  comments: selectComments(state, ownProps.params.storyId)});
+}};
 
 const mapDispatchToProps = dispatch => ({
   fetchSingleStory: (id) => dispatch(fetchSingleStory(id)),

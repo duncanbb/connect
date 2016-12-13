@@ -4,15 +4,10 @@ import WriteCommentContainer from '../comments/write_comment_container';
 
 
 class StoryDetail extends React.Component {
+
   componentDidMount() {
     this.props.fetchSingleStory(this.props.params.storyId);
     this.props.fetchAllComments();
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.params.storyId !== this.props.params.storyId){
-      this.props.fetchSingleStory(newProps.params.storyId);
-    }
   }
 
   makeComment(comment){
@@ -29,7 +24,7 @@ class StoryDetail extends React.Component {
     const { story, currentUser, comments } = this.props;
     let commentsArr = {};
     if (comments) {
-      commentsArr = story.comments.map((comment) => this.makeComment(comment));
+      commentsArr = comments.map((comment) => this.makeComment(comment));
     }
     let link;
     if (currentUser === undefined || story.author.id === undefined){

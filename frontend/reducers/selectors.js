@@ -8,13 +8,8 @@ export const selectStoryDetail = (state) => {
   return (state.storyDetail);
 };
 
+
 export const selectComments = (state, storyId) => {
-  const comments = [];
-  Object.keys(state.comments).forEach(commentId=>{
-    const comment = state.comments[commentId];
-    if (comment.story_id === storyId){
-      commments.push(comment);
-    }
-  });
-  return comments;
+  return values(state.comments)
+  .filter(comment => comment.story_id === parseInt(storyId));
 };

@@ -8,7 +8,7 @@ const commentReducer = ( state = {}, action ) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_NEW_COMMENT:
-      return merge({}, state, {[action.comment.id]: action.comment}) ;
+      return Object.assign({}, state, {[action.comment.id]: action.comment}) ;
     case RECEIVE_ALL_COMMENTS:
       return action.comments;
     case RECEIVE_COMMENT_ERRORS:
