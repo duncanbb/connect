@@ -15,11 +15,12 @@ const StoryReducer = (state = { }, action) => {
       newState[action.story.id] = action.story;
       return newState;
     case REMOVE_STORY:
-      newState = merge({}, oldState);
+      newState = merge({}, state);
       delete newState[action.stories.id];
       return newState;
     case RECEIVE_STORY_ERRORS:
       return merge({}, state, { errors:action.errors.responseJSON });
+      // TODO: make error reducer and remove bogus error handling from other reducers
     default:
       return state;
   }

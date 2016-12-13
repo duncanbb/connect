@@ -9,6 +9,9 @@ class Api::CommentsController < ApplicationController
     end
   end
 
+  def index
+    @comments = Comment.all
+  end
 
   def update
     @comment = current_user.comments.find(params[:id])

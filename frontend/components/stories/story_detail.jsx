@@ -6,6 +6,7 @@ import WriteCommentContainer from '../comments/write_comment_container';
 class StoryDetail extends React.Component {
   componentDidMount() {
     this.props.fetchSingleStory(this.props.params.storyId);
+    this.props.fetchAllComments();
   }
 
   componentWillReceiveProps(newProps) {
@@ -14,8 +15,22 @@ class StoryDetail extends React.Component {
     }
   }
 
+  makeComment(comment){
+    return(
+      <li key={comment.id}>
+        <p className="authorAboutComment">{ comment.username }</p>
+        <p className="commentTimeStamp">{ comment.created_at }</p>
+        <p className="commentBody">{ comment.body }</p>
+      </li>
+    );
+  }
+
   render(){
-    const { story, currentUser } = this.props;
+    const { story, currentUser, comments } = this.props;
+    let commentsArr = {};
+    if (comments) {
+      commentsArr = story.comments.map((comment) => this.makeComment(comment));
+    }
     let link;
     if (currentUser === undefined || story.author.id === undefined){
       link = (<div></div>);
@@ -33,10 +48,13 @@ class StoryDetail extends React.Component {
         <h1 className="postDetailTitle">{ story.title }</h1>
         <section className="postDetailBody">
           { story.body }
-          <p className="linkContainer">{ link }</p>
+          <div className="linkContainer">{ link }</div>
         </section>
         <section className="commentsSection">
           < WriteCommentContainer />
+        <ul className="">
+          { commentsArr }
+        </ul>
         </section>
       </section>
     );

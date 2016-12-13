@@ -31,9 +31,9 @@ class WriteComment extends React.Component {
   }
 
   render(){
-    const { errors } = this.props;
+    const { errors, currentUser } = this.props;
     const { body } = this.state;
-    if (window.currentUser === undefined){
+    if (currentUser === undefined){
       return ( <div></div> )
     }
     return (

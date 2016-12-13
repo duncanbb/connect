@@ -15,10 +15,18 @@ export const updateComment = (comment) => {
   });
 };
 
-export const deleteStory = (story) => {
-  const id = story.id;
+export const deleteComment = (comment) => {
+  const id = comment.id;
   return $.ajax({
       method: 'DELETE',
-      url: `/api/stories/${id}`,
+      url: `/api/comments/${id}`,
+  });
+};
+
+
+export const fetchAllComments = () => {
+  return $.ajax({
+      method: 'GET',
+      url: '/api/comments/'
   });
 };
