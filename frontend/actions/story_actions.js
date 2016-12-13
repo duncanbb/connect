@@ -37,6 +37,17 @@ export function createStory(story) {
   };
 }
 
+export function updateStory(story) {
+  return (dispatch) => {
+    return APIUtil.updateStory(story).then(story => {
+      dispatch(receiveNewStory(story));
+      return story;
+    }, errors => {
+      dispatch(receiveStoryErrors(errors));
+    });
+  };
+}
+
 export const requestAllStories = () => ({
   type: REQUEST_ALL_STORIES
 });

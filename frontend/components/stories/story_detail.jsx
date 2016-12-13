@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router';
+
 
 class StoryDetail extends React.Component {
   componentDidMount() {
@@ -13,15 +15,16 @@ class StoryDetail extends React.Component {
 
   render(){
     const { story, currentUser } = this.props;
-    let button;
+    let link;
     if (currentUser === undefined || story.author.id === undefined){
-      button = (<div></div>);
+      link = (<div></div>);
     } else if
       (story.author.id === currentUser.id)
     {
-      button = (<button>Edit</button>);
+      let id = this.props.params.storyId;
+      link = <Link to={`/stories/edit/${ id }`}>Edit this story</Link>;
     } else {
-      button = (<div></div>);
+      link = (<div></div>);
     }
     return (
       <section className="postDetail">
@@ -29,7 +32,7 @@ class StoryDetail extends React.Component {
         <h1 className="postDetailTitle">{ story.title }</h1>
         <section className="postDetailBody">
           { story.body }
-          { button }
+          <p className="linkContainer">{ link }</p>
         </section>
       </section>
     );

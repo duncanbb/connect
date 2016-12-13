@@ -11,6 +11,16 @@
   padding: 10px 20px 15px 20px;
 }
 
+.edit-a-story-form {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+  margin-top: 65px;
+  margin-left: 200px;
+  padding: 10px 20px 15px 20px;
+  max-width: 1000px;
+}
+
 .story-text-area {
   display: block;
   margin: 31px 38px 0 18px;

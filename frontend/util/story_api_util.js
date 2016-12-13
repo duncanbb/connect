@@ -3,7 +3,16 @@ export const createStory = (story) => {
   return $.ajax({
       method: 'POST',
       url: '/api/stories/',
-        data: { story },
+      data: { story },
+  });
+};
+
+export const updateStory = (story) => {
+  const id = story.id;
+  return $.ajax({
+    method: 'PATCH',
+    url:`/api/stories/${id}`,
+    data: { story },
   });
 };
 
