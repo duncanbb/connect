@@ -25,6 +25,7 @@ class User < ApplicationRecord
   )
 
   has_many :comments
+  has_many :likes
 
   before_validation :ensure_session_token
 
