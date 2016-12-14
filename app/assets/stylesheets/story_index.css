@@ -86,10 +86,13 @@
 }
 
 .alreadyLikedButton {
-  background: image_path("heart.svg");
+  padding: 5px;
+  width: 18px;
+  overflow: hidden;
 }
 
 
 .LikeButton {
-  background: image_path("heart.svg");
+  width: 18px;
+  padding: 5px;
 }

@@ -33,16 +33,20 @@ class Like extends React.Component {
   }
 
   render(){
+    const likes = this.props.likes.length;
+    console.log(likes);
     const likeSearchResult = this.alreadyLiked();
+    const img = window.heart;
+    const fullHeart = window.fullHeart;
     if ( likeSearchResult.length >= 1)
       {  return (
             <div className="like-wrapper">
-              <button className="alreadyLikedButton" onClick={ this.handleSubmit }>Test</button>
+              <input type="image"src={ fullHeart }className="alreadyLikedButton" onClick={ this.handleSubmit }/> { likes }
             </div>
         ) } else {
           return (
             <div className="like-wrapper">
-                <button className="LikeButton" onClick={ this.handleSubmit }>Test</button>
+                <div><input type="image"src={ img }className="LikeButton" onClick={ this.handleSubmit }/> { likes }</div>
             </div>
     );
     }

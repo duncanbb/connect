@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="457" height="423"><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+ <title>heart</title>
+
+ <g class="currentLayer">
+  <title>Layer 1</title>
+  <g id="layer1" class="selected" fill="#06ab00" fill-opacity="1">
+   <path fill="#02b875" stroke="#02b875" stroke-width="10.700001" stroke-miterlimit="4" id="path7" d="m119.99995377441405,-2.3437507934431778e-8 c-66.240005,0 -119.999954,53.76001 -119.999954,120 c0,134.755524 135.933151,170.08728 228.562454,303.308044 c87.574219,-132.403381 228.5625,-172.854584 228.5625,-303.308044 c0,-66.23999 -53.759888000000004,-120 -120,-120 c-48.047913,0 -89.401611,28.370422 -108.5625,69.1875 c-19.160797,-40.817078 -60.514496,-69.1875 -108.5625,-69.1875 z" fill-opacity="1"/>
+  </g>
+ </g>
+</svg>

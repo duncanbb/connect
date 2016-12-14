@@ -21,10 +21,19 @@ class StoryDetail extends React.Component {
     );
   }
 
+  responseCount(){
+    if (this.props.comments.length === 0) {
+      return "";
+    } else {
+      return this.props.comments.length;
+    }
+  }
+
   render(){
     const { story, currentUser, comments } = this.props;
     let commentsArr = {};
     let likeCount = story.likes.length;
+    let noOfResponses = this.responseCount();
     if (comments) {
       commentsArr = comments.map((comment) => this.makeComment(comment));
     }
@@ -48,10 +57,10 @@ class StoryDetail extends React.Component {
         <section className="postDetailBody">
           { story.body }
           <div className="linkContainer">{ link }</div>
-          < LikeContainer storyId={ story.id } likes={ story.likes }/> { likeCount }
+          < LikeContainer storyId={ story.id } likes={ story.likes }/>
         </section>
         <section className="commentsSection">
-          Responses
+          { noOfResponses } Responses
         <ul className="">
           < WriteCommentContainer />
           { commentsArr }
