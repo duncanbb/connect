@@ -12,8 +12,8 @@ class StoryDetail extends React.Component {
 
   makeComment(comment){
     return(
-      <li key={comment.id}>
-        <p className="authorAboutComment">{ comment.username }</p>
+      <li key={comment.id} className="commentStreamItem">
+        <p className="authorAboutComment">{ comment.user.username }</p>
         <p className="commentTimeStamp">{ comment.created_at }</p>
         <p className="commentBody">{ comment.body }</p>
       </li>

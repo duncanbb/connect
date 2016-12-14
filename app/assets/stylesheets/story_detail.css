@@ -35,3 +35,55 @@
   color: rgba(0,0,0,.8);
   font-size: 15px;
 }
+
+.commentStreamItem {
+  padding-top: 10px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  border: 1px solid rgba(0,0,0,.09);
+  max-width: 660px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-size: 18px;
+  line-height: 1.58;
+  letter-spacing: -.004em;
+}
+
+.commentBody {
+  margin-top: 38px;
+  --x-height-multiplier: 0.35;
+  --baseline-multiplier: 0.179;
+  font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
+  letter-spacing: .01rem;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.58;
+  letter-spacing: -.003em;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+
+.authorAboutComment {
+  font-size: 14px;
+  line-height: 1.4;
+  padding-left: 10px;
+  text-rendering: auto;
+  color: #1C9963;
+}
+/*
+return(
+  <li key={comment.id} className="commentStreamItem">
+    <p className="authorAboutComment">{ comment.username }</p>
+    <p className="commentTimeStamp">{ comment.created_at }</p>
+    <p className="commentBody">{ comment.body }</p>
+  </li>
+);
+}*/
