@@ -26,6 +26,7 @@ class StoryDetail extends React.Component {
     if (comments) {
       commentsArr = comments.map((comment) => this.makeComment(comment));
     }
+
     let link;
     if (currentUser === undefined || story.author.id === undefined){
       link = (<div></div>);
@@ -33,10 +34,11 @@ class StoryDetail extends React.Component {
       (story.author.id === currentUser.id)
     {
       let id = this.props.params.storyId;
-      link = <Link to={`/stories/edit/${ id }`}>Edit this story</Link>;
+      link = <Link to={`/stories/edit/${ id }`} className="editLink">Edit</Link>;
     } else {
       link = (<div></div>);
     }
+
     return (
       <section className="postDetail">
         <p className="author-bio">{ story.author.username }</p>
@@ -46,8 +48,9 @@ class StoryDetail extends React.Component {
           <div className="linkContainer">{ link }</div>
         </section>
         <section className="commentsSection">
-          < WriteCommentContainer />
+          Responses
         <ul className="">
+          < WriteCommentContainer />
           { commentsArr }
         </ul>
         </section>

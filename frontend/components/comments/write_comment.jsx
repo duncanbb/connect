@@ -44,7 +44,7 @@ class WriteComment extends React.Component {
               <textarea
                 className="comment-text-area"
                  value={ body }
-                 placeholder="Write Here..."
+                 placeholder="Write a response..."
                  onChange={this.update('body')}>
               </textarea>
             </label>
