@@ -4,7 +4,8 @@ class Api::LikesController < ApplicationController
     @like = Like.new(like_params)
     @like.user_id = current_user.id
     if @like.save
-      render :show
+      @story = @like.story
+      render "/api/stories/show.json.jbuilder"
     else
       render json: @like.errors.full_messages, status: 422
     end
@@ -16,8 +17,9 @@ class Api::LikesController < ApplicationController
 
   def destroy
     @like = current_user.likes.find(params[:id])
+    @story = @like.story
     @like.destroy
-    render :show
+    render "/api/stories/show.json.jbuilder"
   end
 
   private

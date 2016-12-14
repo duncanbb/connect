@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import WriteCommentContainer from '../comments/write_comment_container';
+import LikeContainer from '../likes/like_container';
 
 
 class StoryDetail extends React.Component {
@@ -23,6 +24,7 @@ class StoryDetail extends React.Component {
   render(){
     const { story, currentUser, comments } = this.props;
     let commentsArr = {};
+    let likeCount = story.likes.length;
     if (comments) {
       commentsArr = comments.map((comment) => this.makeComment(comment));
     }
@@ -46,6 +48,7 @@ class StoryDetail extends React.Component {
         <section className="postDetailBody">
           { story.body }
           <div className="linkContainer">{ link }</div>
+          < LikeContainer storyId={ story.id } likes={ story.likes }/> { likeCount }
         </section>
         <section className="commentsSection">
           Responses

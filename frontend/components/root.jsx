@@ -7,7 +7,8 @@ import StoryDetailContainer from './stories/story_detail_container';
 import { fetchSingleStory } from './../actions/story_actions';
 import StoryIndexContainer from './stories/stories_index_container';
 import EditAStoryContainer from './stories/edit_a_story_container';
-import * as APIUtil from '../util/story_api_util';
+import * as Selector from '../reducers/selectors';
+
 
 const _redirectIfLoggedIn = (nextState, replace) => {
   const currentUser = store.getState().session.currentUser;
@@ -21,8 +22,9 @@ const Root = ({ store }) => {
   function ensureStory(nextState, replace, asyncDone) {
     store.dispatch(fetchSingleStory(nextState.params.storyId)).then(asyncDone);
   }
+  
   window.store = store;
-  window.updateStory = APIUtil.updateStory;
+
   return (
   <Provider store={ store }>
     <Router history={ hashHistory }>

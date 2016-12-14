@@ -80,3 +80,16 @@
   overflow: hidden;
   color: rgba(0,0,0,0.8);
 }
+
+.like-wrapper {
+
+}
+
+.alreadyLikedButton {
+  background: image_path("heart.svg");
+}
+
+
+.LikeButton {
+  background: image_path("heart.svg");
+}
