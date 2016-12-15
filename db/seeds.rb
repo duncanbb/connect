@@ -9,9 +9,10 @@ User.destroy_all
 Story.destroy_all
 Comment.destroy_all
 
-user1 = User.create!(username: "test", password: "password")
-user2 = User.create!(username: "faker", password: "nonsense")
-user3 = User.create!(username: "username", password: "another_password")
+user1 = User.create!(username: "JonSmith", password: "password!")
+user2 = User.create!(username: "TrumpTower", password: "nonsense")
+user3 = User.create!(username: "TheEnd", password: "another_password")
+user3 = User.create!(username: "test", password: "password")
 
 story1 = Story.create!(title: "Cold and Flu season is upon us",
   body: "Protect the women and children. With a mild winter like this,
