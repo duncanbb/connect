@@ -18,7 +18,7 @@ Tags
 
 Tags are a table in the database which have names and tag_ids. They are connected to the API by two other tables, tag_follows as mentioned earlier and story_tags, which will be a join-table for stories and tags.
 
-Component Strucure
+Component Structure
 
 Much of the site is nested within the header or sidebar. Most of the user functionality (posting, adjusting followed tags, and searching) lives in the header, which will be rendered as a subcomponent of the index or ExpandedStoryContainer pages.
 

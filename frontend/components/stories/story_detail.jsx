@@ -5,6 +5,13 @@ import LikeContainer from '../likes/like_container';
 
 
 class StoryDetail extends React.Component {
+  constructor(props) {
+    super(props);
+    this.options = this.options.bind(this);
+    this.delete = this.delete.bind(this);
+    this.makeComment = this.makeComment.bind(this);
+    this.commentOptions = this.commentOptions.bind(this);
+  }
 
   componentDidMount() {
     this.props.fetchSingleStory(this.props.params.storyId);
@@ -13,12 +20,30 @@ class StoryDetail extends React.Component {
 
   makeComment(comment){
     return(
-      <li key={comment.id} className="commentStreamItem">
+      <li key={ comment.id } className="commentStreamItem">
         <p className="authorAboutComment">{ comment.user.username }</p>
         <p className="commentTimeStamp">{ comment.created_at }</p>
         <p className="commentBody">{ comment.body }</p>
+        { this.commentOptions(comment) }
       </li>
     );
+  }
+
+  commentOptions(comment){
+    const { currentUser } = this.props;
+    if (currentUser === null || comment.user_id === null){
+      return (<div></div>)
+    } else if (comment.user_id === currentUser.id) {
+      let id = comment.id;
+      return (
+        <ul>
+          <li key="edit"><Link to={`/comment/edit/${ id }`}
+            className="editLink">Edit</Link></li>
+          <li key="delete" onClick={ ()=> this.props.deleteComment(id) }>Delete</li>
+        </ul>
+      )} else {
+        return (<div></div>)
+      }
   }
 
   responseCount(){
@@ -27,6 +52,11 @@ class StoryDetail extends React.Component {
     } else {
       return this.props.comments.length;
     }
+  }
+
+  delete(){
+    const { story } = this.props;
+    this.props.deleteStory(story);
   }
 
   render(){
@@ -38,17 +68,8 @@ class StoryDetail extends React.Component {
       commentsArr = comments.map((comment) => this.makeComment(comment));
     }
 
-    let link;
-    if (currentUser === undefined || story.author.id === undefined){
-      link = (<div></div>);
-    } else if
-      (story.author.id === currentUser.id)
-    {
-      let id = this.props.params.storyId;
-      link = <Link to={`/stories/edit/${ id }`} className="editLink">Edit</Link>;
-    } else {
-      link = (<div></div>);
-    }
+    let userOptions;
+    userOptions = this.options();
 
     return (
       <section className="postDetail">
@@ -56,7 +77,7 @@ class StoryDetail extends React.Component {
         <h1 className="postDetailTitle">{ story.title }</h1>
         <section className="postDetailBody">
           { story.body }
-          <div className="linkContainer">{ link }</div>
+          <div className="userOptionsContainer">{ userOptions }</div>
           < LikeContainer storyId={ story.id } likes={ story.likes }/>
         </section>
         <section className="commentsSection">
@@ -68,6 +89,23 @@ class StoryDetail extends React.Component {
         </section>
       </section>
     );
+  }
+
+  options(){
+    const { currentUser, story } = this.props;
+    if (currentUser === null || story.author.id === null){
+      return (<div></div>)
+    } else if (story.author.id === currentUser.id) {
+      let id = this.props.params.storyId;
+      return (
+        <ul>
+          <li key="edit"><Link to={`/stories/edit/${ id }`}
+            className="editLink">Edit</Link></li>
+          <li key="delete" onClick={ this.delete }>Delete</li>
+        </ul>
+      )} else {
+        return (<div></div>)
+      }
   }
 }
 

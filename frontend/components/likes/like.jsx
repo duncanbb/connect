@@ -14,14 +14,18 @@ class Like extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { createLike, deleteLike } = this.props;
-    const like = Object.assign({}, this.state);
-    const likeSearchResult = this.alreadyLiked();
-    if ( likeSearchResult.length >= 1){
-      const unlike = Object.assign(like, {id: likeSearchResult[0].id});
-      deleteLike(unlike);
+    if ( this.props.currentUser === null ){
+      this.props.openModal();
     } else {
-      createLike(like);
+      const { createLike, deleteLike } = this.props;
+      const like = Object.assign({}, this.state);
+      const likeSearchResult = this.alreadyLiked();
+      if ( likeSearchResult.length >= 1){
+        const unlike = Object.assign(like, {id: likeSearchResult[0].id});
+        deleteLike(unlike);
+      } else {
+        createLike(like);
+      }
     }
   }
 
@@ -35,7 +39,8 @@ class Like extends React.Component {
   render(){
     const likes = this.props.likes.length;
     console.log(likes);
-    const likeSearchResult = this.alreadyLiked();
+
+    const likeSearchResult = (this.props.currentUser) ? this.alreadyLiked() : "";
     const img = window.heart;
     const fullHeart = window.fullHeart;
     if ( likeSearchResult.length >= 1)

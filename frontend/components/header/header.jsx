@@ -10,7 +10,6 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalOpen: false,
       signup: false,
     };
     this.openModal = this.openModal.bind(this);
@@ -20,12 +19,13 @@ class Header extends React.Component {
 
   closeModal(){
     this.props.clearErrors();
-    this.setState({ modalOpen: false });
+    this.props.closeModal();
   }
 
   openModal({ signup }){
     return () => {
-      this.setState({ modalOpen: true, signup });
+      this.setState({ signup });
+      this.props.openModal();
     };
   }
 
@@ -89,7 +89,7 @@ class Header extends React.Component {
       <header>
         {this.signInOrAccountDetails()}
         <Modal
-          isOpen={ modalOpen }
+          isOpen={ this.props.openModalState }
           onRequestClose={ this.closeModal }
           contentLabel="whatever"
           style={ signinModalStyle }>
@@ -101,11 +101,6 @@ class Header extends React.Component {
   );
 }
 
-// TODO: add formmodal then make a form that receives props from the modal and render in that - split the sign in / sign up
-// TODO: into two different links - then based on that pass different props - formmodal will have similiar state to session form
-// TODO: get rid of those routes
-// TODO: fix css styling
-// TODO: make errors reset
 }
 
 

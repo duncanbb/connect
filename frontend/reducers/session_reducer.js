@@ -1,7 +1,8 @@
 import { merge } from 'lodash';
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, RESET_USER, CLEAR_ERRORS } from '../actions/session_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, RESET_USER,
+        CLEAR_ERRORS, OPEN_MODAL, CLOSE_MODAL } from '../actions/session_actions';
 
-const sessionReducer = ( state = { currentUser: null, errors:[]}, action ) => {
+const sessionReducer = ( state = { currentUser: null, errors:[], openModal:false }, action ) => {
   Object.freeze(state);
 
   switch(action.type) {
@@ -14,6 +15,12 @@ const sessionReducer = ( state = { currentUser: null, errors:[]}, action ) => {
     case CLEAR_ERRORS:
       let errors = [];
       return Object.assign({}, state, { errors });
+    case OPEN_MODAL:
+      const openModal = { openModal: true };
+      return Object.assign({}, state, openModal);
+    case CLOSE_MODAL:
+      const closeModal = { openModal: false };
+      return Object.assign({}, state, closeModal);
     default:
       return state;
   }
