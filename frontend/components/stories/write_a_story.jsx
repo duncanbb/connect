@@ -7,9 +7,11 @@ class WriteAStory extends React.Component {
     this.state = {
       title: "",
       body: "",
+      imageFile: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearForm = this.clearForm.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   componentDidUpdate() {
@@ -28,9 +30,14 @@ class WriteAStory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    let file = this.state.imageFile;
+    let formData = new FormData();
+    formData.append("story[title]", this.state.title);
+    formData.append("story[body]", this.state.body);
+    formData.append("story[image]", file);
     const { createStory } = this.props;
-    const story = Object.assign({}, this.state);
-    createStory(story);
+    createStory(formData);
     this.clearForm();
   }
 
@@ -40,12 +47,25 @@ class WriteAStory extends React.Component {
     });
   }
 
+  updateFile (e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({ imageFile: file, imageUrl: fileReader.result });
+    }.bind(this);
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
   render(){
     const { errors } = this.props;
     const { title, body } = this.state;
     if (window.currentUser === undefined){
       return ( <div></div> )
     }
+
+
     return (
       <div className="write-a-story-wrapper">
         { errors }
@@ -65,6 +85,7 @@ class WriteAStory extends React.Component {
                  onChange={this.update('body')}>
               </textarea>
             </label>
+            <input type="file" onChange={this.updateFile} className="image-upload"/>
             <br/>
           <input className="storysubmitButton" type ="submit" value="Publish" />
         </form>

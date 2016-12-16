@@ -9,7 +9,6 @@ class SignInForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      modalOpen: false,
       formStyle: props.formType,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,7 +45,7 @@ class SignInForm extends React.Component {
     const user = Object.assign({}, this.state);
     let toExecute;
     toExecute = formStyle === "Sign Up" ? signUpSubmission : signInSubmission;
-    toExecute(user).then(() => this.props.closeModal());
+    toExecute(user);
   }
 
   update(field) {

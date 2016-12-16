@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import WriteCommentContainer from '../comments/write_comment_container';
 import LikeContainer from '../likes/like_container';
-
+import FollowContainer from '../follows/follow_container';
 
 class StoryDetail extends React.Component {
   constructor(props) {
@@ -30,8 +30,9 @@ class StoryDetail extends React.Component {
   }
 
   commentOptions(comment){
+    //  not a currently functional component
     const { currentUser } = this.props;
-    if (currentUser === null || comment.user_id === null){
+    if (1 === 1 || comment.user_id === null){
       return (<div></div>)
     } else if (comment.user_id === currentUser.id) {
       let id = comment.id;
@@ -60,6 +61,7 @@ class StoryDetail extends React.Component {
   }
 
   render(){
+    debugger
     const { story, currentUser, comments } = this.props;
     let commentsArr = {};
     let likeCount = story.likes.length;
@@ -70,10 +72,12 @@ class StoryDetail extends React.Component {
 
     let userOptions;
     userOptions = this.options();
-
+    const profile = window.profilePic;
     return (
       <section className="postDetail">
-        <p className="author-bio">{ story.author.username }</p>
+        <div className="author-bio"><img src={ profile }/>{ story.author.username }< FollowContainer
+          authorId={ story.author_id } follows={ story.author.follows }/>
+      </div>
         <h1 className="postDetailTitle">{ story.title }</h1>
         <section className="postDetailBody">
           { story.body }

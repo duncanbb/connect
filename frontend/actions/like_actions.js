@@ -17,12 +17,12 @@ export const receiveNewLike = like => ({
 });
 
 
-export const receiveCommentErrors = errors => ({
+export const receiveLikeErrors = errors => ({
   type: RECEIVE_LIKE_ERRORS,
   errors
 });
 
-export const removeComment = like => ({
+export const removeLike = like => ({
   type: REMOVE_LIKE,
   like
 });

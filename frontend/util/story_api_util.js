@@ -3,7 +3,10 @@ export const createStory = (story) => {
   return $.ajax({
       method: 'POST',
       url: '/api/stories/',
-      data: { story },
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+      data: story,
   });
 };
 

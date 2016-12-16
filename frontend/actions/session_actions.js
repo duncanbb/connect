@@ -12,6 +12,7 @@ export function signInUser(user) {
   return (dispatch) => {
     return SessionAPIUtil.signin(user).then(user => {
       dispatch(receiveCurrentUser(user));
+      dispatch(closeModal());
       return user;
     }, errors => {
         dispatch(receiveErrors(errors));
@@ -21,8 +22,9 @@ export function signInUser(user) {
 
 export function signUp(user) {
   return (dispatch) => {
-    return SessionAPIUtil.signup(user).then(user=>
-    dispatch(receiveCurrentUser(user)),
+    return SessionAPIUtil.signup(user).then(user=> {
+    dispatch(receiveCurrentUser(user));
+    dispatch(closeModal()); },
       errors => dispatch(receiveErrors(errors)));
   };
 }

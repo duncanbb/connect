@@ -11,7 +11,7 @@ class StoryIndexItem extends React.Component {
         <section className="index-item">
           <h3 className="story-index-title">{ story.title }</h3>
           <p className="story-index-author-info">by {story.author.username} </p>
-          <img className="story-index-image"src={img}/>
+          <img className="story-index-image"src={ story.image.imageurl }/>
           <p className="story-index-body-preview"> { story.body.slice(0, 65) }...</p>
           <Link to={ `/stories/${ story.id }`} className="read-more">Read more...</Link>
           < LikeContainer storyId={ story.id } likes={ story.likes }/>

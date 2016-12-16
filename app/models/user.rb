@@ -2,12 +2,16 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                 :integer          not null, primary key
+#  username           :string           not null
+#  password_digest    :string           not null
+#  session_token      :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string
+#  image_content_type :string
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -22,6 +26,38 @@ class User < ApplicationRecord
     class_name: "Story",
     foreign_key: :author_id,
     primary_key: :id
+  )
+
+  has_many(
+    :out_follows,
+    class_name: "Follow",
+    foreign_key: :follower_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :followed_authors,
+    through: :out_follows,
+    source: :author
+  )
+
+  has_many(
+    :in_follows,
+    class_name: "Follow",
+    foreign_key: :author_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :followers,
+    through: :in_follows,
+    source: :follower_id
+  )
+
+  has_many(
+    :followed_stories,
+    through: :followed_authors,
+    source: :stories
   )
 
   has_many :comments

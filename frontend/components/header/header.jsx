@@ -82,7 +82,6 @@ class Header extends React.Component {
   }
 
   render() {
-    const { modalOpen } = this.state;
     const { signInForm, signInUser, signup, clearErrors } = this.props;
     const formstring = this.state.signup === true ? "Sign Up" : "Sign In";
     return (

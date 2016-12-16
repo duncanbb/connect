@@ -5,6 +5,7 @@ import StoryReducer from './story_reducer';
 import storyDetailReducer from './story_detail_reducer';
 import CommentReducer from './comment_reducer';
 import likeReducer from './like_reducer';
+import followReducer from './follow_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -12,6 +13,7 @@ const RootReducer = combineReducers({
   storyDetail: storyDetailReducer,
   comments: CommentReducer,
   likes: likeReducer,
+  follows: followReducer,
 });
 
 export default RootReducer;
