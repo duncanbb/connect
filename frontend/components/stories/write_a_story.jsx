@@ -85,7 +85,9 @@ class WriteAStory extends React.Component {
                  onChange={this.update('body')}>
               </textarea>
             </label>
-            <input type="file" onChange={this.updateFile} className="image-upload"/>
+            <label className="fileupload">Image Upload
+              <input type="file" onChange={this.updateFile} className="image-upload"/>
+            </label>
             <br/>
           <input className="storysubmitButton" type ="submit" value="Publish" />
         </form>

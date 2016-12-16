@@ -5,6 +5,7 @@ import WriteAStoryContainer from './write_a_story_container';
 class StoriesIndex extends React.Component {
   componentDidMount() {
     this.props.fetchAllStories();
+    this.props.fetchAllFollows();
   }
 
   render () {

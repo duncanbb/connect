@@ -4,7 +4,6 @@ import LikeContainer from '../likes/like_container';
 
 class StoryIndexItem extends React.Component {
   render(){
-    const img = window.plant;
     const { story } = this.props;
      return (
       <li className="story-index-item">
@@ -13,7 +12,7 @@ class StoryIndexItem extends React.Component {
           <p className="story-index-author-info">by {story.author.username} </p>
           <img className="story-index-image"src={ story.image.imageurl }/>
           <p className="story-index-body-preview"> { story.body.slice(0, 65) }...</p>
-          <Link to={ `/stories/${ story.id }`} className="read-more">Read more...</Link>
+          <Link to={ `/stories/${ story.id }`} className="read-more" onClick={() =>$('body').scrollTop(0)}>Read more...</Link>
           < LikeContainer storyId={ story.id } likes={ story.likes }/>
         </section>
 

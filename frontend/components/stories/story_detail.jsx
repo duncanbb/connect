@@ -61,7 +61,6 @@ class StoryDetail extends React.Component {
   }
 
   render(){
-    debugger
     const { story, currentUser, comments } = this.props;
     let commentsArr = {};
     let likeCount = story.likes.length;
@@ -75,10 +74,21 @@ class StoryDetail extends React.Component {
     const profile = window.profilePic;
     return (
       <section className="postDetail">
-        <div className="author-bio"><img src={ profile }/>{ story.author.username }< FollowContainer
-          authorId={ story.author_id } follows={ story.author.follows }/>
-      </div>
+        <div className="author-bio">
+          <ul>
+            <li className="authorbio author-image">
+              <img src={ profile }/>
+            </li>
+            <li>
+              { story.author.username }
+            </li>
+            <li className="authorbio authorfollows">
+              < FollowContainer authorId={ story.author_id } follows={ story.author.follows }/>
+            </li>
+          </ul>
+        </div>
         <h1 className="postDetailTitle">{ story.title }</h1>
+        <img className="story-index-image"src={ story.image.imageurl }/>
         <section className="postDetailBody">
           { story.body }
           <div className="userOptionsContainer">{ userOptions }</div>

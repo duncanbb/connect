@@ -47,7 +47,7 @@ story2 = Story.create!(title: "New Office is beautiful!",
   like2_2 = Like.create(user_id: user2.id, story_id: story2.id)
   like2_3 = Like.create(user_id: user3.id, story_id: story2.id)
 
-story3 = Story.create!(title: "Daydreaming as a way to regenerate",
+story3 = Story.create!(title: "Daydreaming to regenerate",
   body: "There always needs to be a rhythm and tradeoff between exertion and relaxation.
   Daydreaming, though often derided, is as restorative as focused meditation, except
   without the expended mental energy and opportunity for self-judgment. It is important
@@ -100,7 +100,7 @@ story6 = Story.create!(title: "Why spoil Bad Santa by making a sequel?", body: "
 
   like6_3 = Like.create(user_id: user3.id, story_id: story6.id)
 
-story7 = Story.create!(title: "Nature as decompressing", body: "The medicine of simply being in the forest.
+story7 = Story.create!(title: "Time in Nature helps us decompress", body: "The medicine of simply being in the forest.
 Shinrin-yoku is a term that means 'taking in the forest atmosphere' or 'forest bathing.' It was developed in
 Japan during the 1980s and has become a cornerstone of preventive health care and healing in Japanese medicine.
 In clinical settings it has been found to reduce heart rate, blood-pressure and cortisol museums. If you can't

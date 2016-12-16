@@ -3,6 +3,17 @@
   display: block;
 }
 
+.image-upload {
+  display: none;
+}
+
+.fileupload {
+  font-size: 12px;
+  text-align: right;
+  padding-left: 8px;
+  line-height: 4;
+}
+
 .write-a-story-form {
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,0,0,.04);

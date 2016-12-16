@@ -91,7 +91,7 @@ class SignInForm extends React.Component {
   guestsignIn(e){
     e.preventDefault();
     const user = Object.assign({}, {username: "test", password:"password"});
-    this.props.signInSubmission(user).then(() => this.props.closeModal());
+    this.props.signInSubmission(user);
   }
 
   errors(){

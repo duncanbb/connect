@@ -10,7 +10,7 @@ const followReducer = ( state = {}, action ) => {
     case RECEIVE_NEW_FOLLOW:
       return Object.assign({}, state, {[action.follow.id]: action.follow}) ;
     case RECEIVE_ALL_FOLLOWS:
-      return action.follows;
+      return merge({}, state, action.follows);
     case RECEIVE_FOLLOW_ERRORS:
       return merge({}, state, action.errors);
     case REMOVE_FOLLOW:

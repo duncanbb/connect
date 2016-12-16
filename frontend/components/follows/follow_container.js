@@ -5,7 +5,7 @@ import { openModal } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  follows: ownProps.follows,
+  follows: state.follows,
 });
 
 

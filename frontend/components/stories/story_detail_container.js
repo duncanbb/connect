@@ -6,9 +6,12 @@ import { fetchAllComments, deleteComment } from '../../actions/comment_actions';
 
 
 const mapStateToProps = (state, ownProps) => {{
-  return ({story: selectStoryDetail(state),
-  currentUser: state.session.currentUser,
-  comments: selectComments(state, ownProps.params.storyId)});
+  return ({
+    story: selectStoryDetail(state),
+    currentUser: state.session.currentUser,
+    comments: selectComments(state, ownProps.params.storyId),
+    follows: state.follows
+  });
 }};
 
 const mapDispatchToProps = dispatch => ({

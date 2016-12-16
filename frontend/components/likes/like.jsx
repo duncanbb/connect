@@ -38,7 +38,6 @@ class Like extends React.Component {
 
   render(){
     const likes = this.props.likes.length;
-    console.log(likes);
 
     const likeSearchResult = (this.props.currentUser) ? this.alreadyLiked() : "";
     const img = window.heart;
