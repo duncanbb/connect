@@ -12,11 +12,12 @@ sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Stories with Rich Text Editing
+- [ ] Stories
 - [ ] Commenting
 - [ ] Follows and Custom Feed
 - [ ] Likes
-- [ ] Infinite Scroll
+- [ ] Infinite Scroll BONUS
+- [ ] Rich Text Editing BONUS
 - [ ] Topics/categories BONUS
 - [ ] Bookmarks BONUS
 - [ ] Production README [sample](docs/production_readme.md)
