@@ -5,7 +5,8 @@ import { fetchAllFollows } from '../../actions/follow_actions';
 import StoriesIndex from './stories_index';
 
 const mapStateToProps = state => ({
-  stories: selectAllStories(state)
+  stories: selectAllStories(state),
+  currentUser: state.session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({

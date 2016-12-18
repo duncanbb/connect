@@ -17,6 +17,7 @@ user4 = User.create!(username: "test", password: "password")
 follow1 = Follow.create!(author_id: user1.id, follower_id: user4.id)
 follow2 = Follow.create!(author_id: user2.id, follower_id: user4.id)
 follow3 = Follow.create!(author_id: user3.id, follower_id: user4.id)
+follow4 = Follow.create!(author_id: user4.id, follower_id: user4.id)
 
 story1 = Story.create!(title: "How I traveled for 20 months while still working",
   body: "A lot of people say they're going to quit their jobs and travel. I used

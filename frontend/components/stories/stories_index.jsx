@@ -8,9 +8,10 @@ class StoriesIndex extends React.Component {
     this.props.fetchAllFollows();
   }
 
+
   render () {
     const { stories } = this.props;
-    const storyItems = stories.map(story => (
+    const storyItems = stories.sort().reverse().map(story => (
       <StoryIndexItem key={ story.id } story={ story } author = { story.author }/>)
     );
 
