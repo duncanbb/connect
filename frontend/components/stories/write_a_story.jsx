@@ -61,38 +61,37 @@ class WriteAStory extends React.Component {
   render(){
     const { errors } = this.props;
     const { title, body } = this.state;
-    if (window.currentUser === undefined){
+    if (this.props.currentUser === null){
       return ( <div></div> )
-    }
-
-
-    return (
-      <div className="write-a-story-wrapper">
-        { errors }
-        <form onSubmit={this.handleSubmit} className ="write-a-story-form">
+    } else {
+      return (
+        <div className="write-a-story-wrapper">
+          { errors }
+          <form onSubmit={this.handleSubmit} className ="write-a-story-form">
+              <label className="WriteStoryLabel">
+                <input type="text"
+                  value={ title }
+                  onChange={this.update("title")}
+                  placeholder="Title Here..."
+                  className="title-input" />
+              </label><br/>
             <label className="WriteStoryLabel">
-              <input type="text"
-                value={ title }
-                onChange={this.update("title")}
-                placeholder="Title Here..."
-                className="title-input" />
-            </label><br/>
-          <label className="WriteStoryLabel">
-              <textarea
-                className="story-text-area"
-                 value={ body }
-                 placeholder="Write Here..."
-                 onChange={this.update('body')}>
-              </textarea>
-            </label>
-            <label className="fileupload">Image Upload
-              <input type="file" onChange={this.updateFile} className="image-upload"/>
-            </label>
-            <br/>
-          <input className="storysubmitButton" type ="submit" value="Publish" />
-        </form>
-      </div>
-    );
+                <textarea
+                  className="story-text-area"
+                   value={ body }
+                   placeholder="Write Here..."
+                   onChange={this.update('body')}>
+                </textarea>
+              </label>
+              <label className="fileupload">Image Upload
+                <input type="file" onChange={this.updateFile} className="image-upload"/>
+              </label>
+              <br/>
+            <input className="storysubmitButton" type ="submit" value="Publish" />
+          </form>
+        </div>
+      );
+    }
   }
 
 
