@@ -18,6 +18,7 @@ class StoryDetail extends React.Component {
   componentDidMount() {
     this.props.fetchSingleStory(this.props.params.storyId).then(() => $('body').scrollTop(0));
     this.props.fetchAllComments();
+    this.props.fetchAllFollows();
   }
 
   makeComment(comment){

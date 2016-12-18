@@ -30,9 +30,10 @@ class Follow extends React.Component {
   }
 
   alreadyFollowed() {
-      const { currentUser, follows } = this.props;
+      const { currentUser, follows, authorId } = this.props;
       const filtered = values(follows)
-        .filter(follow => follow.follower_id === parseInt(currentUser.id));
+        .filter(follow => follow.follower_id === parseInt(currentUser.id) && follow.author_id === parseInt(authorId));
+        debugger
         return filtered;
   }
 

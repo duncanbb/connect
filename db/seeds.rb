@@ -8,6 +8,7 @@
 User.destroy_all
 Story.destroy_all
 Comment.destroy_all
+Follow.destroy_all
 
 user1 = User.create!(username: "JonSmith", password: "password!")
 user2 = User.create!(username: "BobMcJennings", password: "nonsense")

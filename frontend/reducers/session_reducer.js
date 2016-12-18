@@ -7,6 +7,7 @@ const sessionReducer = ( state = { currentUser: null, errors:[], openModal:false
 
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
+    debugger
       return merge({}, state, {currentUser: action.user, errors: []});
     case RESET_USER:
       return merge({}, state, {currentUser: null, errors: []});

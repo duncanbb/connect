@@ -9,6 +9,8 @@
 
 class Follow < ApplicationRecord
   validates :author_id, :follower_id, presence: true
+  validates :author_id, uniqueness: { scope: :follower_id }
+
 
   belongs_to :follower,
     class_name: "User",
