@@ -20,8 +20,9 @@ class Story < ApplicationRecord
   validates :body, presence: true
   validates :title, presence: true
 
-  has_attached_file :image, default_url: "home.jpg"
-  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  has_attached_file :image, default_url: ""
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/,
+    allow_nil: true
 
   belongs_to(
     :author,

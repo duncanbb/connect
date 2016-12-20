@@ -57,11 +57,11 @@ class SignInForm extends React.Component {
   render(){
     const { errors, formSubmission } = this.props;
     const { username, password } = this.state;
-    const button = this.state.formType === "Sign Up" ? "" : <button className="loginLabel guestsignIn" onClick={ this.guestsignIn }>Guest Sign In</button>;
+    const button = this.state.formType === "Sign Up" ? "" : <button className="guestsignIn" onClick={ this.guestsignIn }>Guest Sign In</button>;
     const swapButton =
       this.state.formStyle === "Sign Up" ?
-        <button className="loginLabel guestsignIn" onClick={ this.swap }>Or Sign In</button>
-          : <button className="loginLabel guestsignIn" onClick={ this.swap }>Or Sign Up</button>;
+        <button className="loginLabel signIn" onClick={ this.swap }>Or Sign In</button>
+          : <button className="loginLabel signUp" onClick={ this.swap }>Or Sign Up</button>;
     return (
       <div>
         <form onSubmit={this.handleSubmit} className ="session-form">
