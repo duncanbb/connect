@@ -7,7 +7,6 @@ class WriteAStory extends React.Component {
     this.state = {
       title: "",
       body: "",
-      imageFile: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearForm = this.clearForm.bind(this);
@@ -35,7 +34,9 @@ class WriteAStory extends React.Component {
     let formData = new FormData();
     formData.append("story[title]", this.state.title);
     formData.append("story[body]", this.state.body);
-    formData.append("story[image]", file);
+    if (file) {
+      formData.append("story[image]", file);
+    }
     const { createStory } = this.props;
     createStory(formData);
     this.clearForm();
