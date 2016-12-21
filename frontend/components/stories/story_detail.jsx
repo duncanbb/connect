@@ -63,10 +63,19 @@ class StoryDetail extends React.Component {
     this.props.deleteStory(story);
   }
 
+  defineImage(story){
+    if (story.image_url){
+      return (<img className="story-index-image"src={ story.image_url }/>);
+    } else {
+      return;
+    }
+  }
+
   render(){
     const { story, currentUser, comments } = this.props;
     let commentsArr = {};
     let likeCount = story.likes.length;
+    let image = this.defineImage(story);
     let noOfResponses = this.responseCount();
     if (comments) {
       commentsArr = comments.map((comment) => this.makeComment(comment));
@@ -91,7 +100,7 @@ class StoryDetail extends React.Component {
           </ul>
         </div>
         <h1 className="postDetailTitle">{ story.title }</h1>
-        <img className="story-index-image"src={ story.image.imageurl }/>
+        { image }
         <section className="postDetailBody">
           { story.body }
           <div className="userOptionsContainer">{ userOptions }</div>
