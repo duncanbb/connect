@@ -2,7 +2,7 @@ var webpack = require("webpack");
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/connect.jsx",
+  entry: "./frontend/connect",
   output: {
     path: "./app/assets/javascripts",
     filename: "bundle.js"
