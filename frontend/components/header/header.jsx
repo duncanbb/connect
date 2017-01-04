@@ -16,6 +16,7 @@ class Header extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.formStyle = this.formStyle.bind(this);
     this.writeStory = this.writeStory.bind(this);
+    this.logoutHelper = this.logoutHelper.bind(this);
   }
 
   closeModal(){
@@ -32,7 +33,7 @@ class Header extends React.Component {
 
   signInOrAccountDetails(){
     let wrapper;
-    const { currentUser, logout } = this.props;
+    const { currentUser } = this.props;
     if (currentUser) {
         wrapper =
         <ul className="header-links group">
@@ -40,7 +41,7 @@ class Header extends React.Component {
             <button onClick={ this.writeStory }>Write a story</button>
           </li>
           <li>
-            <button onClick={ logout }>Sign out</button>
+            <button onClick={ this.logoutHelper }>Sign out</button>
           </li>
           <li>
             <Link to="/search">Search</Link>
@@ -80,6 +81,10 @@ class Header extends React.Component {
     } else {
       return (this.props.signInUser);
     }
+  }
+
+  logoutHelper(){
+    this.props.logout().then(() => this.props.router.push('/'))
   }
 
   render() {
