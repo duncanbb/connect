@@ -15,6 +15,7 @@ class Header extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.formStyle = this.formStyle.bind(this);
+    this.writeStory = this.writeStory.bind(this);
   }
 
   closeModal(){
@@ -36,7 +37,7 @@ class Header extends React.Component {
         wrapper =
         <ul className="header-links group">
           <li>
-            <Link to="/write_a_story">Write a story</Link>
+            <button onClick={ this.writeStory }>Write a story</button>
           </li>
           <li>
             <button onClick={ logout }>Sign out</button>
@@ -50,7 +51,7 @@ class Header extends React.Component {
         wrapper =
         <ul className="header-links group">
           <li>
-            <Link to="/write_a_story">Write a story</Link>
+            <button onClick={ this.writeStory }>Write a story</button>
           </li>
           <li>
             <button onClick={ this.openModal({ signup: false}) }>Sign In </button>
@@ -97,8 +98,16 @@ class Header extends React.Component {
             formType= {formstring} clearErrors = {clearErrors}/>
         </Modal>
     </header>
-  );
-}
+    );
+  }
+
+  writeStory(){
+    if ( this.props.loggedIn ){
+      this.props.router.push('write_a_story')
+    } else {
+      this.props.openModal();
+    }
+  }
 
 }
 

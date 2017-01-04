@@ -29,20 +29,17 @@ class WriteAStory extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if ( this.props.currentUser === null ){
-      this.props.openModal();
-    } else {
-      let file = this.state.imageFile;
-      let formData = new FormData();
-      formData.append("story[title]", this.state.title);
-      formData.append("story[body]", this.state.body);
-      if (file) {
-        formData.append("story[image]", file);
-      }
-      const { createStory } = this.props;
-      createStory(formData);
-      this.clearForm();
+
+    let file = this.state.imageFile;
+    let formData = new FormData();
+    formData.append("story[title]", this.state.title);
+    formData.append("story[body]", this.state.body);
+    if (file) {
+      formData.append("story[image]", file);
     }
+    const { createStory } = this.props;
+    createStory(formData);
+    this.clearForm();
   }
 
   update(field) {
