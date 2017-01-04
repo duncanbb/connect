@@ -12,6 +12,13 @@
   letter-spacing: -.004em
 }
 
+.story-index-image-small {
+  width: auto;
+  display: block;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
 .story-index-author-info {
   color: #00ab6b;
   text-decoration: none;

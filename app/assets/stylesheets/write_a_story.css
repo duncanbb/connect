@@ -7,6 +7,14 @@
   display: none;
 }
 
+.small-img {
+  width: auto;
+  display: block;
+  margin: auto;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
 .fileupload {
   font-size: 12px;
   text-align: right;

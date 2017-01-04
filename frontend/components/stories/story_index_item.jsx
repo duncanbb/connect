@@ -22,12 +22,22 @@ class StoryIndexItem extends React.Component {
   }
   defineImage(story){
     if (story.image_url){
-      return (<img className="story-index-image"src={ story.image_url }/>);
+      let width = this.getMeta(story.image_url);
+      if (width > 800) {
+        return (<img className="story-index-image"src={ story.image_url }/>);
+      } else {
+        return (<img className="story-index-image-small"src={ story.image_url }/>);
+      }
     } else {
       return;
     }
   }
+
+  getMeta(url){
+    var img = new Image();
+    img.src = url;
+    return img.naturalWidth
+  }
 }
-// TODO: style this
-// TODO: add create, update and destroy
+
 export default StoryIndexItem;
