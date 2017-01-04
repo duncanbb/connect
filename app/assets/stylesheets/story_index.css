@@ -47,9 +47,8 @@
   background: #fafafa;
   max-width: 1000px;
   padding-top: 70px;
-  display: inline-block;
   margin: 0 auto;
-  margin-left: 26.5%
+  display: block;
 }
 
 .home-sidebar-container {

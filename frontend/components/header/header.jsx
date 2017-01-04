@@ -82,9 +82,13 @@ class Header extends React.Component {
       return (this.props.signInUser);
     }
   }
-
+  
   logoutHelper(){
-    this.props.logout().then(() => this.props.router.push('/'))
+    this.props.logout().then(() => {
+      if (this.props.router.location.pathname !== '/') {
+        this.props.router.push('/')
+      }
+    });
   }
 
   render() {
