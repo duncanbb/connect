@@ -46,10 +46,10 @@
 .home-stream-container {
   background: #fafafa;
   max-width: 1000px;
-  padding-top: 35px;
-  margin-left: 200px;
-  /* TODO: adjust this once there's an actual sidebar present */
+  margin-top: 35px;
   display: inline-block;
+  margin: 0 auto;
+  margin-left: 26.5%
 }
 
 .home-sidebar-container {
