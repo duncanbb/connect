@@ -43,7 +43,7 @@ class Header extends React.Component {
           <li>
             <button onClick={ this.logoutHelper }>Sign out</button>
           </li>
-          <li>
+          <li className="hide-me">
             <Link to="/search">Search</Link>
           </li>
         </ul>;
@@ -60,7 +60,7 @@ class Header extends React.Component {
           <li>
             <button onClick={ this.openModal({ signup: true }) }>Sign Up</button>
           </li>
-          <li>
+          <li className="hide-me">
             <Link to="/search">Search</Link>
           </li>
         </ul>;
@@ -82,7 +82,7 @@ class Header extends React.Component {
       return (this.props.signInUser);
     }
   }
-  
+
   logoutHelper(){
     this.props.logout().then(() => {
       if (this.props.router.location.pathname !== '/') {

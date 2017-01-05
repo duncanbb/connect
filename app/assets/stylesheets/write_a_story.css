@@ -1,8 +1,3 @@
-.write-a-story-wrapper {
-  margin-top: 30px;
-  display: block;
-}
-
 .image-upload {
   display: none;
 }
@@ -30,7 +25,6 @@
   padding: 10px 20px 15px 20px;
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 70px
 }
 
 .edit-a-story-form {
