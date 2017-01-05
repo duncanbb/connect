@@ -64,6 +64,11 @@ class WriteAStory extends React.Component {
     const { title, body, imageUrl } = this.state;
     let width = this.getMeta(imageUrl);
     const imagePreview = imageUrl === undefined ? null : this.formatImage(width);
+    if (this.props.currentUser === null){
+      return (
+        <div></div>
+      )
+    }
     return (
       <div className="write-a-story-wrapper">
         { errors }
@@ -107,12 +112,16 @@ class WriteAStory extends React.Component {
     }
   }
 
-  formatImage(width) {
+  formatImage(width){
     const { imageUrl } = this.state;
-    if (width < 800) {
-      return (<img src={imageUrl} className="small-img" />);
+    if (imageUrl){
+      if (width > 800) {
+        return (<img className="story-index-image"src={ story.image_url }/>);
+      } else {
+        return (<img className="small-img"src={ story.image_url }/>);
+      }
     } else {
-      return (<img src={imageUrl} />);
+      return;
     }
   }
 
