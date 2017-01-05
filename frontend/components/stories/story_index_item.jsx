@@ -20,6 +20,7 @@ class StoryIndexItem extends React.Component {
       </li>
     );
   }
+  
   defineImage(story){
     if (story.image_url){
       let width = this.getMeta(story.image_url);

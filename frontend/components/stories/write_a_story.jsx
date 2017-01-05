@@ -11,7 +11,7 @@ class WriteAStory extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearForm = this.clearForm.bind(this);
     this.updateFile = this.updateFile.bind(this);
-    this.formatImage = this.formatImage.bind(this);
+    this.defineImage = this.defineImage.bind(this);
   }
 
   componentDidUpdate() {
@@ -62,9 +62,7 @@ class WriteAStory extends React.Component {
   render(){
     const { errors } = this.props;
     const { title, body, imageUrl } = this.state;
-    let width = this.getMeta(imageUrl);
-    const imagePreview = imageUrl === undefined ? null : this.formatImage(width);
-    debugger
+    const imagePreview = this.defineImage();
     if (this.props.currentUser === null){
       return (
         <div></div>
@@ -100,6 +98,19 @@ class WriteAStory extends React.Component {
     }
   }
 
+  defineImage(){
+    const { imageUrl } = this.state;
+    if (imageUrl){
+      let width = this.getMeta(imageUrl);
+      if (width > 800) {
+        return (<img className="story-index-image"src={ imageUrl }/>);
+      } else {
+        return (<img className="small-img"src={ imageUrl }/>);
+      }
+    } else {
+      return;
+    }
+  }
 
   errors(){
     const { errors } = this.props;
@@ -111,19 +122,6 @@ class WriteAStory extends React.Component {
           { errors.map((error, idx) => <li key={idx}> {error} </li>) }
         </ul>
       );
-    }
-  }
-
-  formatImage(width){
-    const { imageUrl } = this.state;
-    if (imageUrl){
-      if (width > 800) {
-        return (<img className="story-index-image"src={ imageUrl }/>);
-      } else {
-        return (<img className="small-img"src={ imageUrl }/>);
-      }
-    } else {
-      return;
     }
   }
 
