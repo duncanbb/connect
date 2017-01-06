@@ -37,6 +37,10 @@
   max-width: 1000px;
 }
 
+.edit-a-story-wrapper {
+  padding-top: 80px;
+}
+
 .story-text-area {
   display: block;
   margin: 31px 38px 0 18px;

@@ -38,15 +38,16 @@ button:hover{
 
 .header-links li {
   float: left;
-  padding: 20px 10px;
-  font-size: 14px;
+  padding: 25px 10px;
+  font-size: 16px;
 }
 
 .logo {
   padding: 20px;
   float: left;
   font-weight: bold;
-  color: rgba(0,0,0,.75)
+  color: rgba(0,0,0,.75);
+  font-size: 24px;
 }
 
 .group :after {

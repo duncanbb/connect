@@ -10,7 +10,6 @@ class StoryDetail extends React.Component {
     this.options = this.options.bind(this);
     this.delete = this.delete.bind(this);
     this.makeComment = this.makeComment.bind(this);
-    this.commentOptions = this.commentOptions.bind(this);
   }
 
 
@@ -30,24 +29,6 @@ class StoryDetail extends React.Component {
         { this.commentOptions(comment) }
       </li>
     );
-  }
-
-  commentOptions(comment){
-    //  not a currently functional component
-    const { currentUser } = this.props;
-    if (1 === 1 || comment.user_id === null){
-      return (<div></div>)
-    } else if (comment.user_id === currentUser.id) {
-      let id = comment.id;
-      return (
-        <ul>
-          <li key="edit"><Link to={`/comment/edit/${ id }`}
-            className="editLink">Edit</Link></li>
-          <li key="delete" onClick={ ()=> this.props.deleteComment(id) }>Delete</li>
-        </ul>
-      )} else {
-        return (<div></div>)
-      }
   }
 
   responseCount(){
@@ -114,10 +95,12 @@ class StoryDetail extends React.Component {
         { image }
         <section className="postDetailBody">
           { story.body }
+        </section>
+        <section>
           <div className="userOptionsContainer">{ userOptions }</div>
-          < LikeContainer storyId={ story.id } likes={ story.likes }/>
         </section>
         <section className="commentsSection">
+          < LikeContainer storyId={ story.id } likes={ story.likes }/>
           { noOfResponses } Responses
         <ul className="">
           < WriteCommentContainer />
@@ -135,9 +118,10 @@ class StoryDetail extends React.Component {
     } else if (story.author.id === currentUser.id) {
       let id = this.props.params.storyId;
       return (
-        <ul>
-          <li key="edit"><Link to={`/stories/edit/${ id }`}
-            className="editLink">Edit</Link></li>
+        <ul className="edit-delete group">
+          <li key="edit">
+            <Link to={`/stories/edit/${ id }`}>Edit</Link>
+          </li>
           <li key="delete" onClick={ this.delete }>Delete</li>
         </ul>
       )} else {

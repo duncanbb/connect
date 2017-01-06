@@ -52,9 +52,9 @@ class EditAStory extends React.Component {
       return ( <div></div> )
     }
     return (
-      <div className="edit write-a-story-wrapper">
+      <div className="edit-a-story-wrapper">
         { errors }
-        <form onSubmit={this.handleSubmit} className ="edit-a-story-form">
+        <form onSubmit={this.handleSubmit} className ="write-a-story-form">
             <label className="edit WriteStoryLabel">
               <input type="text"
                 value={ title }
@@ -64,7 +64,7 @@ class EditAStory extends React.Component {
             </label><br/>
           <label className="edit WriteStoryLabel">
               <textarea
-                className="edit story-text-area"
+                className="story-text-area"
                  value={ body }
                  placeholder="Write Here..."
                  onChange={this.update('body')}>
