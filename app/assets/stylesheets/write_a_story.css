@@ -15,6 +15,13 @@
   text-align: right;
   padding-left: 8px;
   line-height: 4;
+  cursor: pointer;
+  color: #101010;
+}
+
+.fileupload:hover{
+  color: #000000;
+  font-style:oblique;
 }
 
 .write-a-story-form {
