@@ -111,9 +111,10 @@ class Header extends React.Component {
   }
 
   writeStory(){
-    if ( this.props.loggedIn ){
+    if ( this.props.loggedIn && this.props.location.pathname !== "/write_a_story")
+    {
       this.props.router.push('write_a_story')
-    } else {
+    } else if ( this.props.loggedIn === false ){
       this.props.openModal();
     }
   }
