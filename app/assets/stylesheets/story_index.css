@@ -65,6 +65,7 @@
 .home-stream-background {
   width: 100%;
   background: #fafafa;
+  min-height: 100vh;
 }
 
 .index-item {
