@@ -96,7 +96,6 @@ class WriteAStory extends React.Component {
         </div>
       );
     } else {
-      console.log('test');
       return (
         <div className="home-stream-container">
           { errors }
