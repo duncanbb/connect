@@ -10,17 +10,19 @@ class StoryIndexItem extends React.Component {
      return (
       <li className="story-index-item">
         <section className="index-item">
-          <h3 className="story-index-title">{ story.title }</h3>
-          <p className="story-index-author-info">by {story.author.username} </p>
-          { image }
-          <p className="story-index-body-preview"> { story.body.slice(0, 65) }...</p>
-          <Link to={ `/stories/${ story.id }`} className="read-more">Read more...</Link>
-          < LikeContainer storyId={ story.id } likes={ story.likes }/>
+          <Link to={ `/stories/${ story.id }`}>
+            <h3 className="story-index-title">{ story.title }</h3>
+            <p className="story-index-author-info">by {story.author.username} </p>
+            { image }
+            <p className="story-index-body-preview"> { story.body.slice(0, 65) }...</p>
+            <p className="read-more">Read more...</p>
+            < LikeContainer storyId={ story.id } likes={ story.likes }/>
+        </Link>
         </section>
       </li>
     );
   }
-  
+
   defineImage(story){
     if (story.image_url){
       let width = this.getMeta(story.image_url);
