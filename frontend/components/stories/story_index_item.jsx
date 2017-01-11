@@ -11,10 +11,10 @@ class StoryIndexItem extends React.Component {
       <li className="story-index-item">
         <section className="index-item">
           <Link to={ `/stories/${ story.id }`}>
-            <h3 className="story-index-title">{ story.title }</h3>
+            <p className="story-index-title">{ story.title }</p>
             <p className="story-index-author-info">by {story.author.username} </p>
             { image }
-            <p className="story-index-body-preview"> { story.body.slice(0, 65) }...</p>
+            <p className="story-index-body-preview"> { story.body.slice(0, 130) }...</p>
             <p className="read-more">Read more...</p>
             < LikeContainer storyId={ story.id } likes={ story.likes }/>
         </Link>

@@ -26,7 +26,7 @@ class StoryDetail extends React.Component {
         <p className="authorAboutComment">{ comment.user.username }</p>
         <p className="commentTimeStamp">{ comment.created_at }</p>
         <p className="commentBody">{ comment.body }</p>
-        { this.commentOptions(comment) }
+        { this.options(comment) }
       </li>
     );
   }
@@ -102,7 +102,7 @@ class StoryDetail extends React.Component {
         <section className="commentsSection">
           < LikeContainer storyId={ story.id } likes={ story.likes }/>
           { noOfResponses } Responses
-        <ul className="">
+        <ul className="comments-wrapper">
           < WriteCommentContainer />
           { commentsArr }
         </ul>
