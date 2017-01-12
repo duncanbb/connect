@@ -53,9 +53,7 @@ export function updateStory(story) {
 export function deleteStory(story) {
   return (dispatch) => {
     return APIUtil.deleteStory(story).then(story => {
-      dispatch(removeStory(story)).then(() => {
-        fetchAllStories();
-      });
+      dispatch(removeStory(story));
       return story;
     }, errors => {
       dispatch(receiveStoryErrors(errors));

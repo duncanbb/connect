@@ -41,8 +41,7 @@ class StoryDetail extends React.Component {
 
   delete(){
     const { story } = this.props;
-    this.props.deleteStory(story);
-    this.props.router.push("/");
+    this.props.deleteStory(story).then(() => (this.props.router.push('/')) );
   }
 
   defineImage(story){

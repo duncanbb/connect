@@ -41,7 +41,9 @@ class WriteAStory extends React.Component {
     const { createStory } = this.props;
     createStory(formData);
     this.clearForm();
-    this.props.router.push("/");
+    if (this.props.router.location.pathname === "/write_a_story") {
+      this.props.router.push("/");
+    }
   }
 
   update(field) {
