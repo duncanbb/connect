@@ -6,7 +6,11 @@ export const selectAllStories = (state) => {
     let follows = userFollows(state, id);
     let collected =
     follows.map(follow => storiesByAuthorId(state, follow.author_id));
-    return flatten(collected);
+    if (flatten(collected).length < 10){
+      return values(state.stories);
+    } else {
+      return (values(state.stories));
+    }
   } else {
     return values(state.stories);
   }
