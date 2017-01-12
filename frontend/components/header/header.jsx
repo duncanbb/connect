@@ -17,6 +17,7 @@ class Header extends React.Component {
     this.formStyle = this.formStyle.bind(this);
     this.writeStory = this.writeStory.bind(this);
     this.logoutHelper = this.logoutHelper.bind(this);
+    this.index = this.index.bind(this);
   }
 
   closeModal(){
@@ -68,11 +69,18 @@ class Header extends React.Component {
       return (
         <div className="metabar">
           <nav className ="top-header group">
-            <Link to="/" className="logo">Connect</Link>
+            <button onClick={ this.index } className="logo">Connect</button>
             { wrapper }
           </nav>
         </div>
       );
+  }
+
+  index(){
+    if ( this.props.router.location.pathname !== "/")
+    {
+      this.props.router.push('/')
+    }
   }
 
   formStyle(){
@@ -111,7 +119,7 @@ class Header extends React.Component {
   }
 
   writeStory(){
-    if ( this.props.loggedIn && this.props.location.pathname !== "/write_a_story")
+    if ( this.props.loggedIn && this.props.router.location.pathname !== "/write_a_story")
     {
       this.props.router.push('write_a_story')
     } else if ( this.props.loggedIn === false ){

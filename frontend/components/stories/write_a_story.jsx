@@ -25,7 +25,8 @@ class WriteAStory extends React.Component {
   }
 
   clearForm(){
-    this.setState({title:"", body:"", imageUrl:""});
+    this.setState({title:"", body:""});
+    this.state = {};
   }
 
   handleSubmit(e) {
@@ -40,6 +41,7 @@ class WriteAStory extends React.Component {
     const { createStory } = this.props;
     createStory(formData);
     this.clearForm();
+    this.props.router.push("/");
   }
 
   update(field) {
@@ -93,6 +95,7 @@ class WriteAStory extends React.Component {
               <br/>
             <input className="storysubmitButton" type ="submit" value="Publish" />
           </form>
+          <div className="padding"></div>
         </div>
       );
     } else {

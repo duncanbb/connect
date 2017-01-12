@@ -37,6 +37,7 @@ class EditAStory extends React.Component {
     const story = Object.assign({}, this.state);
     updateStory(story);
     this.clearForm();
+    this.props.router.push(`/stories/${this.state.id}`);
   }
 
   update(field) {

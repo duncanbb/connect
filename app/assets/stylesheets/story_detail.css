@@ -111,6 +111,11 @@
   padding-right: 50px;
 }
 
+.edit-delete li:last-child:hover{
+  cursor: pointer;
+}
+
+
 .commentsubmitButton {
     display: inline-block;
     position: relative;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 import WriteCommentContainer from '../comments/write_comment_container';
 import LikeContainer from '../likes/like_container';
 import FollowContainer from '../follows/follow_container';
@@ -42,6 +42,7 @@ class StoryDetail extends React.Component {
   delete(){
     const { story } = this.props;
     this.props.deleteStory(story);
+    this.props.router.push("/");
   }
 
   defineImage(story){
