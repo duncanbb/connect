@@ -8,11 +8,6 @@ class StoriesIndex extends React.Component {
     this.props.fetchAllStories();
   }
 
-  componentWillReceiveProps(newProps) {
-    this.newProps.fetchAllFollows();
-    this.newProps.fetchAllStories();
-  }
-
 
   render () {
     const { stories } = this.props;

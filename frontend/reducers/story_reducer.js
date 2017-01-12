@@ -17,6 +17,7 @@ const StoryReducer = (state = { }, action) => {
     case REMOVE_STORY:
       newState = merge({}, state);
       delete newState[action.story.id];
+      debugger
       return newState;
     case RECEIVE_STORY_ERRORS:
       return merge({}, state, { errors:action.errors.responseJSON });
