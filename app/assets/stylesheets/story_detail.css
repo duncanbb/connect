@@ -21,22 +21,23 @@
 
 }
 
-.like-wrapper {
-  margin-bottom: 20px;
-}
-
 .comments-wrapper {
   margin: 0 auto;
 }
+
+.replies {
+  padding: 10px 0 0 10px;
+}
+
 .postDetailBody {
-  padding-top: 10px;
+  padding-bottom: 10px;
   --x-height-multiplier: 0.35;
   --baseline-multiplier: 0.179;
   font-family: medium-content-serif-font,Georgia,Cambria,"Times New Roman",Times,serif;
   letter-spacing: .01rem;
   font-weight: 400;
   font-style: normal;
-  font-size: 21px;
+  font-size: 24px;
   line-height: 1.58;
   letter-spacing: -.003em;
 }
@@ -139,8 +140,9 @@
     border-color: #02b875;
 }
 
-.commentsubmitButton :hover {
-  background:
+.commentsubmitButton:hover {
+  background: #00ab6b;
+  color: white;
 }
 
 .FollowedButton {

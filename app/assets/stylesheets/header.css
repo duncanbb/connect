@@ -99,6 +99,13 @@ button:hover{
   background-color: #00ab6b;
 }
 
+.guestsignIn:hover {
+  color: white;
+  background: #04613e;
+  border: 1px solid #00ab6b;
+
+}
+
 .loginLabel {
   margin-top: 35px;
   margin-left: 40px;

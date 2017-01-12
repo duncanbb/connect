@@ -93,20 +93,24 @@ class StoryDetail extends React.Component {
         </div>
         <h1 className="postDetailTitle">{ story.title }</h1>
         { image }
-        <section className="postDetailBody">
-          { story.body }
-        </section>
-        <section>
-          <div className="userOptionsContainer">{ userOptions }</div>
-        </section>
-        <section className="commentsSection">
-          < LikeContainer storyId={ story.id } likes={ story.likes }/>
-          { noOfResponses } Responses
-        <ul className="comments-wrapper">
-          < WriteCommentContainer />
-          { commentsArr }
-        </ul>
-        </section>
+        <div className="story-footer">
+          <section className="postDetailBody">
+            { story.body }
+          </section>
+          <section>
+            <div className="userOptionsContainer">{ userOptions }</div>
+          </section>
+          <section className="commentsSection">
+            < LikeContainer storyId={ story.id } likes={ story.likes }/>
+          <div className="replies">
+            { noOfResponses } Responses
+          </div>
+          <ul className="comments-wrapper">
+            < WriteCommentContainer />
+            { commentsArr }
+          </ul>
+          </section>
+        </div>
       </section>
     );
   }

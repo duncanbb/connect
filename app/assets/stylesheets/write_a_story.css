@@ -88,3 +88,8 @@
   color: #00ab6b;
   border-color: #02b875;
 }
+
+.storysubmitButton:hover {
+  background: #00ab6b;
+  color: white;
+}

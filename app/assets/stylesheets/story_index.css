@@ -1,5 +1,7 @@
 .story-index-title {
-  font-size: 29px;
+  font-size: 30px;
+  padding-top: 16px;
+  font-weight: 700;
   margin-left: -1.81px;
   line-height: 1.04;
   letter-spacing: -.028em;
@@ -8,16 +10,22 @@
 
 .story-index-body-preview {
   color: rgba(0,0,0,.44);
-  font-size: 18px;
-  line-height: 1.58;
-  letter-spacing: -.004em
+  font-size: 22px;
+  line-height: 1.22;
+  letter-spacing: -.004em;
+}
+
+
+.story-footer {
+  margin: 10px 0 10px 0;
 }
 
 .story-index-image-small {
-  width: auto;
-  display: block;
+  max-width: 85%;
+    display: block;
   box-sizing: border-box;
   padding: 20px;
+  margin: 0 auto;
 }
 
 .story-index-author-info {
@@ -25,7 +33,7 @@
   text-decoration: none;
   display: table-cell;
   vertical-align: middle;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.4;
   padding-left: 10px;
   text-rendering: auto;
@@ -33,8 +41,9 @@
 }
 
 .read-more {
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(0,0,0,.44);
+  padding-bottom: 5px;
   text-align: left;
   vertical-align: baseline;
 }
@@ -71,10 +80,14 @@
 
 .index-item {
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,.04);
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.04);
   border: 1px solid rgba(0,0,0,.09);
   margin-bottom: 10px;
-  padding: 10px 20px 15px 20px;
+  padding: 10px 20px 0px 20px;
+}
+
+.index-item:hover {
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .form-heading {
@@ -89,9 +102,6 @@
   color: rgba(0,0,0,0.8);
 }
 
-.like-wrapper {
-
-}
 
 .alreadyLikedButton {
   padding: 5px;
