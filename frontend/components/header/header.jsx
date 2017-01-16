@@ -28,6 +28,7 @@ class Header extends React.Component {
   openModal({ signup }){
     return () => {
       this.setState({ signup });
+      this.props.clearErrors();
       this.props.openModal();
     };
   }
