@@ -17,7 +17,7 @@ class Like extends React.Component {
     if ( this.props.currentUser === null ){
       this.props.openModal();
     } else {
-      this.disabled = true;
+      e.currentTarget.disabled = true;
       const { createLike, deleteLike } = this.props;
       const like = Object.assign({}, this.state);
       const likeSearchResult = this.alreadyLiked();
@@ -28,7 +28,7 @@ class Like extends React.Component {
         deleteLike(unlike);
       }
     }
-    this.disabled = false;
+
   }
 
   alreadyLiked() {
