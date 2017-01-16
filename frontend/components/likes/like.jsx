@@ -21,11 +21,11 @@ class Like extends React.Component {
       const { createLike, deleteLike } = this.props;
       const like = Object.assign({}, this.state);
       const likeSearchResult = this.alreadyLiked();
-      if ( likeSearchResult.length === 1){
+      if ( likeSearchResult.length === 0){
+        createLike(like);
+      } else {
         const unlike = Object.assign(like, {id: likeSearchResult[0].id});
         deleteLike(unlike);
-      } else {
-        createLike(like);
       }
     }
     this.disabled = false;
