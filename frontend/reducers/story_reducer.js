@@ -14,10 +14,6 @@ const StoryReducer = (state = { }, action) => {
       newState = merge({}, state);
       newState[action.story.id] = action.story;
       return newState;
-    case RECEIVE_USER_PAGE:
-      newState = merge({}, state);
-      newState.user = action.user;
-      return newState;
     case REMOVE_STORY:
       newState = merge({}, state);
       delete newState[action.story.id];
