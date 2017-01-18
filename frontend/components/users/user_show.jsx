@@ -12,11 +12,20 @@ class UserShow extends React.Component {
   }
 
   componentDidMount(){
-    const { user } = this.props;
+    const { userId } = this.props;
     // need to add to story reducer so it merges into state - then pull it out and render story index items
-    this.props.fetchUserStories(user.id);
+    this.props.fetchUserStories(userId);
   }
 
+  render(){
+    return(
+      <div>
+        <p>
+          test
+        </p>
+      </div>
+    );
+  }
 
 
 }

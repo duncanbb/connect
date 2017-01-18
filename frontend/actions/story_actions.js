@@ -31,7 +31,6 @@ export function fetchUserStories(id) {
   return (dispatch) => {
     return APIUtil.fetchUserStories(id)
       .then(user => { dispatch(receiveUserPage(user));
-      return user;
     });
   };
 }

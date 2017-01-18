@@ -2,7 +2,7 @@ import { merge } from 'lodash';
 
 import {
   RECEIVE_ALL_STORIES, REMOVE_STORY,
-  RECEIVE_STORY_ERRORS, RECEIVE_NEW_STORY
+  RECEIVE_STORY_ERRORS, RECEIVE_NEW_STORY, RECEIVE_USER_PAGE
 } from '../actions/story_actions';
 
 const StoryReducer = (state = { }, action) => {
@@ -13,6 +13,10 @@ const StoryReducer = (state = { }, action) => {
     case RECEIVE_NEW_STORY:
       newState = merge({}, state);
       newState[action.story.id] = action.story;
+      return newState;
+    case RECEIVE_USER_PAGE:
+      newState = merge({}, state);
+      newState.user = action.user;
       return newState;
     case REMOVE_STORY:
       newState = merge({}, state);

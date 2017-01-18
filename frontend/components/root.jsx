@@ -25,7 +25,7 @@ const Root = ({ store }) => {
   }
 
   function userStories(nextState, replace, asyncDone) {
-    store.dispatch(fetchUserStories(nextState.params.userId)).then(asyncDone);
+    (fetchUserStories(nextState.params.userId)).then(asyncDone);
   }
 
   window.store = store;
@@ -38,7 +38,7 @@ const Root = ({ store }) => {
         <Route path="write_a_story" component={ WriteAStoryContainer }/>
         <Route path="stories/:storyId" component={ StoryDetailContainer } onEnter={ ensureStory }/>
         <Route path="stories/edit/:storyId" component={ EditAStoryContainer } onEnter={ ensureStory }/>
-        <Route path="users/:userId" component={ UserShowContainer }/>
+        <Route path="users/:userId" component={ UserShowContainer } />
       </Route>
     </Router>
   </Provider>
