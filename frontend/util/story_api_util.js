@@ -33,6 +33,13 @@ export const fetchAllStories = () => {
   });
 };
 
+export const fetchUserStories = (id) => {
+  return $.ajax({
+      method: 'GET',
+      url: `/api/users/${id}`
+  });
+};
+
 export const deleteStory = (story) => {
   const id = story.id;
   return $.ajax({

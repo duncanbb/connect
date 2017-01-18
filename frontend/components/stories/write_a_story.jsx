@@ -71,8 +71,8 @@ class WriteAStory extends React.Component {
       return (
         <div style={ {backgroundImage: `url(${window.splash})`}}
           className="splash">
-          <p className="splashText">It’s time to get more from what you read. Find and share real
-            perspectives about topics that matter today.</p>
+          <p className="splashText">It’s time to get more from what you read.
+            Find and share real perspectives about topics that matter today.</p>
         </div>
       )
     } else if (this.props.router.location.pathname !== "/write_a_story"){
