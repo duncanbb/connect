@@ -6,7 +6,6 @@ export const REQUEST_SINGLE_STORY = 'REQUEST_SINGLE_STORY';
 export const CREATE_STORY = 'CREATE_STORY';
 export const RECEIVE_NEW_STORY = 'RECEIVE_NEW_STORY';
 export const REMOVE_STORY = 'REMOVE_STORY';
-export const RECEIVE_USER_PAGE = 'RECEIVE_USER_PAGE';
 
 import * as APIUtil from '../util/story_api_util';
 
@@ -23,14 +22,6 @@ export function fetchSingleStory(id) {
     return APIUtil.fetchSingleStory(id)
       .then(story => { dispatch(receiveSingleStory(story));
       return story;
-    });
-  };
-}
-
-export function fetchUserStories(id) {
-  return (dispatch) => {
-    return APIUtil.fetchUserStories(id)
-      .then(user => { dispatch(receiveUserPage(user));
     });
   };
 }
@@ -96,11 +87,6 @@ export const removeStory = story => ({
 export const receiveNewStory = story => ({
   type: RECEIVE_NEW_STORY,
   story
-});
-
-export const receiveUserPage = user => ({
-  type: RECEIVE_USER_PAGE,
-  user
 });
 
 export const receiveStoryErrors = errors => ({
