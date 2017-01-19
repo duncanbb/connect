@@ -33,13 +33,13 @@ class UserShow extends React.Component {
                   <li className="authorbio author-image">
                     <img src={ profile }/>
                   </li>
-                  <li>
+                  <li className="user-name">
                     { user.username }
                   </li>
-                  <li>
-                    <p>Follows: {out_follows}</p>
-                    <p>Followers: {in_follows}</p>
-                  </li>
+                  <ul className="followsList group">
+                    <li>Follows: {out_follows}</li>
+                    <li>Followers: {in_follows}</li>
+                  </ul>
                 </ul>
               </section>
               <ul>
