@@ -18,16 +18,30 @@ class UserShow extends React.Component {
   }
 
   render(){
-    const { user } = this.props;
+    const { user, stories } = this.props;
     const profile = window.profilePic;
+    const storyItems = stories.sort().reverse().map(story => (
+      <StoryIndexItem key={ story.id } story={ story } author = { story.author }/>)
+    );
 
     return(
-      <section className="userDetail">
-        <div className="author-bio">
-          <ul>
-          </ul>
-        </div>
-      </section>
+      <div className="home-stream-background">
+        <div className="home-stream-container">
+          <div className="author-bio">
+            <ul>
+              <li className="authorbio author-image">
+                <img src={ profile }/>
+              </li>
+              <li>
+                { user.username }
+              </li>
+            </ul>
+          </div>
+              <ul>
+                {storyItems}
+              </ul>
+          </div>
+      </div>
     );
   }
 
