@@ -1,6 +1,7 @@
 import React from 'react';
 import StoryIndexItem from '../stories/story_index_item';
 import { Link, withRouter } from 'react-router';
+import FollowContainer from '../follows/follow_container';
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -28,13 +29,16 @@ class UserShow extends React.Component {
     return(
       <div className="home-stream-background">
         <div className="home-stream-container">
-            <section className="index-item">
+            <section className="index-item group">
                 <ul>
                   <li className="authorbio author-image">
                     <img src={ profile }/>
                   </li>
                   <li className="user-name">
                     { user.username }
+                  </li>
+                  <li className="authorbio authorfollows">
+                    < FollowContainer authorId={ user.username } follows={ in_follows }/>
                   </li>
                   <ul className="followsList group">
                     <li>Follows: {out_follows}</li>

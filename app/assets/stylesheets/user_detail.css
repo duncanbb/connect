@@ -5,8 +5,10 @@
 
 .followsList {
   padding-bottom: 10px;
+  display: block;
 }
 
 .followsList li {
   float: left;
+  padding-right: 5px;
 }
