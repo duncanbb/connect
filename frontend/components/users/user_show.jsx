@@ -23,17 +23,26 @@ class UserShow extends React.Component {
     const storyItems = stories.sort().reverse().map(story => (
       <StoryIndexItem key={ story.id } story={ story } author = { story.author }/>)
     );
+    const [in_follows, out_follows] = user.in_follows ? [user.in_follows.length, user.out_follows.length] : [0, 0];
 
     return(
       <div className="home-stream-background">
         <div className="home-stream-container">
           <div className="author-bio">
             <ul>
-              <li className="authorbio author-image">
-                <img src={ profile }/>
-              </li>
-              <li>
-                { user.username }
+              <li className="story-index-item">
+                <ul>
+                  <li className="authorbio author-image">
+                    <img src={ profile }/>
+                  </li>
+                  <li>
+                    { user.username }
+                  </li>
+                  <li>
+                    <p>Follows: {out_follows}</p>
+                    <p>Followers: {in_follows}</p>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
