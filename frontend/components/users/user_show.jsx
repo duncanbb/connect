@@ -13,7 +13,8 @@ class UserShow extends React.Component {
 
   componentDidMount(){
     const { userId } = this.props;
-    this.props.fetchUserStories(userId);
+    this.props.fetchAllStories();
+    this.props.fetchUser(userId);
   }
 
   render(){

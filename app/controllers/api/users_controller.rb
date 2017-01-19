@@ -12,9 +12,9 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:stories).find(params[:id])
-    render :show
+    @user = User.find(params[:id])  
   end
+
 
 
   private

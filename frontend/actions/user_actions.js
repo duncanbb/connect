@@ -2,7 +2,7 @@ export const RECEIVE_USER_PAGE = 'RECEIVE_USER_PAGE';
 import * as APIUtil from '../util/story_api_util';
 
 
-export function fetchUserStories(id) {
+export function fetchUser(id) {
   return (dispatch) => {
     return APIUtil.fetchUserStories(id)
       .then(user => { dispatch(receiveUserPage(user));
