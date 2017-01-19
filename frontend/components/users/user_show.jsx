@@ -28,9 +28,7 @@ class UserShow extends React.Component {
     return(
       <div className="home-stream-background">
         <div className="home-stream-container">
-          <div className="author-bio">
-            <ul>
-              <li className="story-index-item">
+            <section className="index-item">
                 <ul>
                   <li className="authorbio author-image">
                     <img src={ profile }/>
@@ -43,9 +41,7 @@ class UserShow extends React.Component {
                     <p>Followers: {in_follows}</p>
                   </li>
                 </ul>
-              </li>
-            </ul>
-          </div>
+              </section>
               <ul>
                 {storyItems}
               </ul>
