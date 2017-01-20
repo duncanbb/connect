@@ -12,7 +12,11 @@ class StoryIndexItem extends React.Component {
         <section className="index-item">
           <Link to={ `/stories/${ story.id }`}>
             <p className="story-index-title">{ story.title }</p>
+          </Link>
+          <Link to={ `/users/${ story.author.id }`}>
             <p className="story-index-author-info">by {story.author.username} </p>
+          </Link>
+          <Link to={ `/stories/${ story.id }`}>
             { image }
             <p className="story-index-body-preview"> { story.body.slice(0, 130) }...</p>
             <div className="story-footer">

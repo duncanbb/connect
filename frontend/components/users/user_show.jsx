@@ -14,17 +14,20 @@ class UserShow extends React.Component {
 
   componentDidMount(){
     const { userId } = this.props;
-    this.props.fetchAllStories();
+    this.props.fetchAllStories().then(() => $('body').scrollTop(0));
     this.props.fetchUser(userId);
+    this.props.fetchAllFollows();
+
   }
 
+
   render(){
-    const { user, stories } = this.props;
+    const { user, userId, stories } = this.props;
     const profile = window.profilePic;
     const storyItems = stories.sort().reverse().map(story => (
       <StoryIndexItem key={ story.id } story={ story } author = { story.author }/>)
     );
-    const [in_follows, out_follows] = user.in_follows ? [user.in_follows.length, user.out_follows.length] : [0, 0];
+    let [in_follows, out_follows] = user.in_follows ? [user.in_follows.length, user.out_follows.length] : [0, 0];
 
     return(
       <div className="home-stream-background">
@@ -38,7 +41,7 @@ class UserShow extends React.Component {
                     { user.username }
                   </li>
                   <li className="authorbio authorfollows">
-                    < FollowContainer authorId={ user.username } follows={ in_follows }/>
+                    < FollowContainer authorId={ userId } follows={ in_follows }/>
                   </li>
                   <ul className="followsList group">
                     <li>Follows: {out_follows}</li>

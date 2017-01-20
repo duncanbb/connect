@@ -22,9 +22,9 @@ class Follow extends React.Component {
       const followSearchResult = this.alreadyFollowed();
       if ( followSearchResult.length >= 1){
         const unfollow = Object.assign(follow, {id: followSearchResult[0].id});
-        deleteFollow(unfollow);
+        deleteFollow(unfollow).then(()=>this.props.fetchUser(this.props.authorId));
       } else {
-        createFollow(follow);
+        createFollow(follow).then(()=>this.props.fetchUser(this.props.authorId));
       }
     }
   }
