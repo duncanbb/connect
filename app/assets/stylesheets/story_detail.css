@@ -150,6 +150,10 @@
   color: white;
 }
 
+.authorfollows {
+  padding-left: 25px;
+}
+
 .FollowedButton {
   display: inline-block;
   position: relative;

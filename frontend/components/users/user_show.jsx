@@ -33,15 +33,17 @@ class UserShow extends React.Component {
       <div className="home-stream-background">
         <div className="home-stream-container">
             <section className="index-item group">
-                <ul>
-                  <li className="authorbio author-image">
+                <ul className="followsList group">
+                  <li className="author-image">
                     <img src={ profile }/>
-                  </li>
-                  <li className="user-name">
-                    { user.username }
                   </li>
                   <li className="authorbio authorfollows">
                     < FollowContainer authorId={ userId } follows={ in_follows }/>
+                  </li>
+                </ul>
+                <ul>
+                  <li className="user-name">
+                    { user.username }
                   </li>
                   <ul className="followsList group">
                     <li>Following: {out_follows}</li>
