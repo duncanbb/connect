@@ -1,10 +1,10 @@
 .user-name {
   font-size: 28px;
-  padding-bottom: 10px;
 }
 
 .followsList {
   padding-bottom: 10px;
+  padding-top: 10px;
   display: block;
 }
 

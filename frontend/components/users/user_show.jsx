@@ -44,7 +44,7 @@ class UserShow extends React.Component {
                     < FollowContainer authorId={ userId } follows={ in_follows }/>
                   </li>
                   <ul className="followsList group">
-                    <li>Follows: {out_follows}</li>
+                    <li>Following: {out_follows}</li>
                     <li>Followers: {in_follows}</li>
                   </ul>
                 </ul>
