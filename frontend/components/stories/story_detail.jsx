@@ -78,16 +78,18 @@ class StoryDetail extends React.Component {
     const profile = window.profilePic;
     return (
       <section className="postDetail">
-        <div className="author-bio">
-          <ul>
+        <div className="author-bio group">
+          <ul className="followsList group">
             <li className="authorbio author-image">
               <img src={ profile }/>
             </li>
-            <li>
-              { story.author.username }
-            </li>
             <li className="authorbio authorfollows">
               < FollowContainer authorId={ story.author_id } follows={ story.author.follows }/>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              { story.author.username }
             </li>
           </ul>
         </div>
