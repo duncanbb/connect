@@ -80,7 +80,7 @@ class SignInForm extends React.Component {
             </label>
             { this.errors() }
           <footer className="signin-footer"> </footer>
-          <input className="submitButton" type ="submit" value="Submit" />
+          <input className="submitHeaderButton" type ="submit" value="Submit" />
           { button }
           { swapButton }
         </form>

@@ -62,7 +62,7 @@ button:hover{
   margin: 0 auto;
 }
 
-.submitButton {
+.submitHeaderButton {
   width: 100%;
   height: 58px;
   border-radius: 2px;
@@ -77,7 +77,7 @@ button:hover{
   cursor: pointer;
 }
 
-.submitButton:hover {
+.submitHeaderButton:hover {
   background-color: rgba(0,0,0,.05);
   border: 1px solid #02b875;
   color: #00ab6b;

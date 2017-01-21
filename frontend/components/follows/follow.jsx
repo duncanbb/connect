@@ -42,12 +42,12 @@ class Follow extends React.Component {
     if ( followSearchResult.length >= 1)
       {  return (
             <div className="follow-wrapper">
-              <button className="storysubmitButton" onClick={ this.handleSubmit }>Following</button> { follows }
+              <button className="submitButton" onClick={ this.handleSubmit }>Following</button> { follows }
             </div>
         ) } else {
           return (
             <div className="follow-wrapper">
-                <div><button className="storysubmitButton" onClick={ this.handleSubmit }>Follow</button> { follows }</div>
+                <div><button className="submitButton" onClick={ this.handleSubmit }>Follow</button> { follows }</div>
             </div>
     );
     }

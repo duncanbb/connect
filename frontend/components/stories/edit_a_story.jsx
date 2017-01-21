@@ -72,7 +72,7 @@ class EditAStory extends React.Component {
               </textarea>
             </label>
             <br/>
-          <input className="storysubmitButton" type ="submit" value="Update" />
+          <input className="submitButton" type ="submit" value="Update" />
         </form>
       </div>
     );

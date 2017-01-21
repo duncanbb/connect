@@ -99,7 +99,7 @@ class WriteAStory extends React.Component {
                 <input type="file" onChange={this.updateFile} className="image-upload"/>
               </label>
               <br/>
-            <input className="storysubmitButton" type ="submit" value="Publish" />
+            <input className="submitButton" type ="submit" value="Publish" />
           </form>
           <div className="padding"></div>
         </div>
@@ -129,7 +129,7 @@ class WriteAStory extends React.Component {
                   <input type="file" onChange={this.updateFile} className="image-upload"/>
                 </label>
                 <br/>
-              <input className="storysubmitButton" type ="submit" value="Publish" />
+              <input className="submitButton" type ="submit" value="Publish" />
             </form>
           </div>
         </div>

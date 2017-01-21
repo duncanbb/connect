@@ -75,7 +75,7 @@
   font-size: 18px;
 }
 
-.storysubmitButton {
+.submitButton {
   display: inline-block;
   position: relative;
   height: 37px;
@@ -106,7 +106,7 @@
   border-color: #02b875;
 }
 
-.storysubmitButton:hover {
+.submitButton:hover {
   background: #00ab6b;
   color: white;
 }
