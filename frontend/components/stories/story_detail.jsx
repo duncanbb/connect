@@ -23,7 +23,9 @@ class StoryDetail extends React.Component {
   makeComment(comment){
     return(
       <li key={ comment.id } className="commentStreamItem">
-        <p className="authorAboutComment">{ comment.user.username }</p>
+        <Link to={ `/users/${ comment.user.id }`}>
+          <p className="authorAboutComment">{ comment.user.username }</p>
+        </Link>
         <p className="commentTimeStamp">{ comment.created_at }</p>
         <p className="commentBody">{ comment.body }</p>
         { this.options(comment) }
@@ -80,17 +82,21 @@ class StoryDetail extends React.Component {
       <section className="postDetail">
         <div className="author-bio group">
           <ul className="followsList group">
-            <li className="authorbio author-image">
-              <img src={ profile }/>
-            </li>
+              <li className="authorbio author-image">
+                <Link to={ `/users/${ story.author.id }`}>
+                  <img src={ profile }/>
+                </Link>
+              </li>
             <li className="authorbio authorfollows">
               < FollowContainer authorId={ story.author_id } follows={ story.author.follows }/>
             </li>
           </ul>
           <ul>
+            <Link to={ `/users/${ story.author.id }`}>
             <li>
               { story.author.username }
             </li>
+          </Link>
           </ul>
         </div>
         <h1 className="postDetailTitle">{ story.title }</h1>
