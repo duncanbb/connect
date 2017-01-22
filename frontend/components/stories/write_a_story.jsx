@@ -13,6 +13,7 @@ class WriteAStory extends React.Component {
     this.clearForm = this.clearForm.bind(this);
     this.updateFile = this.updateFile.bind(this);
     this.defineImage = this.defineImage.bind(this);
+    this.updateBody = this.updateBody.bind(this);
   }
 
   componentDidUpdate() {
@@ -51,6 +52,10 @@ class WriteAStory extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  updateBody(text) {
+    this.setState({ body: text });
   }
 
   updateFile (e) {
@@ -94,7 +99,7 @@ class WriteAStory extends React.Component {
                 theme="snow"
                 value={ body }
                 placeholder="Write Here..."
-                onChange={ this.update("body")}/>
+                onChange={ this.updateBody }/>
 
             </label>
             <label className="fileupload">Image Upload
