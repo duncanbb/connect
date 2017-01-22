@@ -4,7 +4,9 @@ import LikeContainer from '../likes/like_container';
 
 class StoryIndexItem extends React.Component {
   render(){
+
     const { story } = this.props;
+    const preview = this.createPreview(story);
     const image = this.defineImage(story);
     const imgPath = story.image_url;
      return (
@@ -18,7 +20,7 @@ class StoryIndexItem extends React.Component {
           </Link>
           <Link to={ `/stories/${ story.id }`}>
             { image }
-            <p className="story-index-body-preview"> { story.body.slice(0, 130) }...</p>
+            <div className="story-index-body-preview"> { preview }...</div>
             <div className="story-footer">
               <p className="read-more">Read more...</p>
               < LikeContainer storyId={ story.id } likes={ story.likes }/>
@@ -28,6 +30,16 @@ class StoryIndexItem extends React.Component {
       </li>
     );
   }
+
+  createPreview(story) {
+      const rawString = story.body.slice(0,130);
+      const div = (
+        <div
+          dangerouslySetInnerHTML={ {__html: rawString } }
+          />
+      );
+      return div;
+    }
 
   defineImage(story){
     if (story.image_url){

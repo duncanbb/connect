@@ -5,14 +5,25 @@ import LikeContainer from '../likes/like_container';
 import FollowContainer from '../follows/follow_container';
 
 class StoryDetail extends React.Component {
+
   constructor(props) {
     super(props);
     this.options = this.options.bind(this);
     this.delete = this.delete.bind(this);
     this.makeComment = this.makeComment.bind(this);
+    this.createBody = this.createBody.bind(this);
   }
 
 
+  createBody() {
+      const rawString = this.props.story.body;
+      const div = (
+        <div
+          dangerouslySetInnerHTML={ {__html: rawString } }
+          />
+      );
+      return div;
+  }
 
   componentDidMount() {
     this.props.fetchSingleStory(this.props.params.storyId).then(() => $('body').scrollTop(0));
@@ -102,9 +113,7 @@ class StoryDetail extends React.Component {
         <h1 className="postDetailTitle">{ story.title }</h1>
         { image }
         <div className="story-footer">
-          <section className="postDetailBody">
-            { story.body }
-          </section>
+            { this.createBody() }
           <section>
             <div className="userOptionsContainer">{ userOptions }</div>
           </section>
