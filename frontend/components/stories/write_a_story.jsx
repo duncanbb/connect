@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 import { Link, withRouter } from 'react-router';
 
 class WriteAStory extends React.Component {
@@ -80,29 +81,30 @@ class WriteAStory extends React.Component {
         <div className="write-a-story-wrapper">
           { errors }
           <form onSubmit={this.handleSubmit} className ="write-a-story-form">
-              <label className="WriteStoryLabel">
-                <input type="text"
-                  value={ title }
-                  onChange={this.update("title")}
-                  placeholder="Title Here..."
-                  className="title-input" />
-                { imagePreview }
+            <label className="WriteStoryLabel">
+              <input type="text"
+                value={ title }
+                onChange={this.update("title")}
+                placeholder="Title Here..."
+                className="title-input" />
+              { imagePreview }
               </label><br/>
             <label className="WriteStoryLabel">
-                <textarea
-                  className="story-text-area"
-                   value={ body }
-                   placeholder="Write Here..."
-                   onChange={this.update("body")}/>
-              </label>
-              <label className="fileupload">Image Upload
-                <input type="file" onChange={this.updateFile} className="image-upload"/>
-              </label>
-              <br/>
+              <ReactQuill
+                theme="snow"
+                value={ body }
+                placeholder="Write Here..."
+                onChange={ this.update("body")}/>
+
+            </label>
+            <label className="fileupload">Image Upload
+              <input type="file" onChange={this.updateFile} className="image-upload"/>
+            </label>
+            <br/>
             <input className="submitButton" type ="submit" value="Publish" />
           </form>
           <div className="padding"></div>
-        </div>
+          </div>
       );
     } else {
       return (
