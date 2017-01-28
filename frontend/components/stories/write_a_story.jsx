@@ -99,7 +99,8 @@ class WriteAStory extends React.Component {
                 theme="snow"
                 value={ body }
                 placeholder="Write Here..."
-                onChange={ this.updateBody }/>
+                onChange={ this.updateBody }
+                />
 
             </label>
             <label className="fileupload">Image Upload

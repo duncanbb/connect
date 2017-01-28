@@ -32,14 +32,10 @@ class StoryIndexItem extends React.Component {
   }
 
   createPreview(story) {
-      const rawString = story.body.slice(0,130);
-      const div = (
-        <div
-          dangerouslySetInnerHTML={ {__html: rawString } }
-          />
-      );
-      return div;
-    }
+    let wrapper = document.createElement("div");
+    wrapper.innerHTML = story.body.slice(0, 130);
+    return wrapper.textContent;
+  }
 
   defineImage(story){
     if (story.image_url){
@@ -59,6 +55,7 @@ class StoryIndexItem extends React.Component {
     img.src = url;
     return img.naturalWidth
   }
+
 }
 
 export default StoryIndexItem;

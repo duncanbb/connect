@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 import { Link, withRouter } from 'react-router';
 
 class EditAStory extends React.Component {
@@ -11,6 +12,7 @@ class EditAStory extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearForm = this.clearForm.bind(this);
+    this.updateBody = this.updateBody.bind(this);
   }
 
   componentDidMount() {
@@ -64,12 +66,12 @@ class EditAStory extends React.Component {
                 className="title-input" />
             </label><br/>
           <label className="edit WriteStoryLabel">
-              <textarea
-                className="story-text-area"
-                 value={ body }
-                 placeholder="Write Here..."
-                 onChange={this.update('body')}>
-              </textarea>
+            <ReactQuill
+              theme="snow"
+              value={ body }
+              placeholder="Write Here..."
+              onChange={ this.updateBody }
+              />
             </label>
             <br/>
           <input className="submitButton" type ="submit" value="Update" />
@@ -91,6 +93,11 @@ class EditAStory extends React.Component {
       );
     }
   }
+
+  updateBody(text) {
+    this.setState({ body: text });
+  }
+
 
 }
 
