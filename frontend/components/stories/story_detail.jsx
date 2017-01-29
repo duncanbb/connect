@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactQuill from 'react-quill';
 import { Link, withRouter } from 'react-router';
 import WriteCommentContainer from '../comments/write_comment_container';
 import LikeContainer from '../likes/like_container';
@@ -16,6 +17,7 @@ class StoryDetail extends React.Component {
 
 
   createBody() {
+    debugger
       const rawString = this.props.story.body;
       const div = (
         <div
@@ -27,17 +29,15 @@ class StoryDetail extends React.Component {
 
   componentDidMount() {
     this.props.fetchSingleStory(this.props.params.storyId).then(() => $('body').scrollTop(0));
-    this.props.fetchAllComments();
     this.props.fetchAllFollows();
   }
 
   makeComment(comment){
     return(
       <li key={ comment.id } className="commentStreamItem">
-        <Link to={ `/users/${ comment.user.id }`}>
-          <p className="authorAboutComment">{ comment.user.username }</p>
+        <Link to={ `/users/${ comment.user_id }`}>
+          <p className="authorAboutComment">{ comment.username }</p>
         </Link>
-        <p className="commentTimeStamp">{ comment.created_at }</p>
         <p className="commentBody">{ comment.body }</p>
         { this.options(comment) }
       </li>
@@ -77,13 +77,13 @@ class StoryDetail extends React.Component {
   }
 
   render(){
-    const { story, currentUser, comments } = this.props;
+    const { story, currentUser } = this.props;
     let commentsArr = {};
     let likeCount = story.likes.length;
     let image = this.defineImage(story);
     let noOfResponses = this.responseCount();
-    if (comments) {
-      commentsArr = comments.map((comment) => this.makeComment(comment));
+    if (story) {
+      commentsArr = story.comments.map((comment) => this.makeComment(comment));
     }
 
     let userOptions;
@@ -113,7 +113,7 @@ class StoryDetail extends React.Component {
         <h1 className="postDetailTitle">{ story.title }</h1>
         { image }
         <div className="story-footer">
-            { this.createBody() }
+          { this.createBody() }
           <section>
             <div className="userOptionsContainer">{ userOptions }</div>
           </section>

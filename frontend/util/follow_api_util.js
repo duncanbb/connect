@@ -16,6 +16,8 @@ export const deleteFollow = (follow) => {
 };
 
 
+
+
 export const fetchAllFollows = () => {
   return $.ajax({
       method: 'GET',
