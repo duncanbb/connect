@@ -4,7 +4,6 @@ import LikeContainer from '../likes/like_container';
 
 class StoryIndexItem extends React.Component {
   render(){
-
     const { story } = this.props;
     const preview = this.createPreview(story);
     const image = this.defineImage(story);
@@ -33,7 +32,8 @@ class StoryIndexItem extends React.Component {
 
   createPreview(story) {
     let wrapper = document.createElement("div");
-    wrapper.innerHTML = story.body.slice(0, 130);
+    wrapper.innerHTML = story.body;
+    debugger
     return wrapper.textContent;
   }
 
