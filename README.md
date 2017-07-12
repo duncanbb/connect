@@ -1,8 +1,7 @@
 # Connect
 
 Connect live:
-[View Live Site][heroku]
-[heroku]: http://www.connect-app.org/
+[View Live Site]: http://www.connect-app.org/
 
 Connect is a full--stack web app based on Medium. The backend runs on Ruby on rails, with a PostgreSQL database and React/Redux framework on the frontend to ensure a seamless user experience.
 
