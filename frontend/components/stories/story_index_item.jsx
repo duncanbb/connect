@@ -33,7 +33,6 @@ class StoryIndexItem extends React.Component {
   createPreview(story) {
     let wrapper = document.createElement("div");
     wrapper.innerHTML = story.body;
-    debugger
     return wrapper.textContent;
   }
 
